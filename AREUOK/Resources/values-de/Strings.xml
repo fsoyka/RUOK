@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">AREUOK</string>
+	<string name="questionnaire_button">Fragebogen</string>
+	<string name="change_lang_button">Switch to English</string>
+	<string name="about_button">Impressum</string>
+	<string name="Impressum">Diese App wurde im Rahmen der MedTech Startup School 2015 in Tübingen programmiert.</string>
+	<string name="back_button">Zurück</string>
+	<string name="whole_time_button">die ganze Zeit</string>
+	<string name="most_time_button">meistens</string>
+	<string name="more_than_half_button">über die Hälfte der Zeit</string>
+	<string name="less_than_half_button">weniger als die Hälfte der Zeit</string>
+	<string name="time_to_time_button">ab und zu</string>
+	<string name="never_button">zu keinem Zeitpunkt</string>
+	<string name="continue_button">Weiter</string>
+	<string name="less_than_thirteen">Wenn Sie in der Summe weniger als 13 Punkte erreichen, sprechen Sie bitte mit Ihrem Arzt.</string>
+	<string name="total_score">Ihr Gesamt Ergebnis ist:</string>
+	<string name="Q1of5">Frage 1 von 5</string>
+	<string name="Q2of5">Frage 2 von 5</string>
+	<string name="Q3of5">Frage 3 von 5</string>
+	<string name="Q4of5">Frage 4 von 5</string>
+	<string name="Q5of5">Frage 5 von 5</string>
+	<string name="Score">Ergebnis:</string>
+	<string name="Question1">In den letzten 2 Wochen war ich froh und guter Laune:</string>
+	<string name="Question2">In den letzten 2 Wochen habe ich mich ruhig und entspannt gefühlt:</string>
+	<string name="Question3">In den letzten 2 Wochen habe ich mich aktiv und voller Energie gefühlt:</string>
+	<string name="Question4">In den letzten 2 Wochen habe ich mich beim Aufwachen frisch und ausgeruht gefühlt:</string>
+	<string name="Question5">In den letzten 2 Wochen war mein Alltag voller Dinge, die mich interessieren:</string>
+</resources>

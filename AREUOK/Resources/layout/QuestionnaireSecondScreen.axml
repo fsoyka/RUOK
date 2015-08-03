@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent">
+    <TextView
+        android:text="@string/Q2of5"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView4" />
+    <TextView
+        android:text="@string/Question2"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView2" />
+    <Button
+        android:text="@string/whole_time_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button1"
+        android:background="#ffc62a54"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp" />
+    <Button
+        android:text="@string/most_time_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2"
+        android:background="#ffe04d00"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp" />
+    <Button
+        android:text="@string/more_than_half_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3"
+        android:background="#ffe07300"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp" />
+    <Button
+        android:text="@string/less_than_half_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button4"
+        android:background="#ff2291b2"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp" />
+    <Button
+        android:text="@string/time_to_time_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button5"
+        android:background="#ffabd4ff"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp" />
+    <Button
+        android:text="@string/never_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button6"
+        android:background="#ff7bbe6d"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="2dp" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="48.7dp"
+        android:id="@+id/space1" />
+    <TextView
+        android:text="@string/Score"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
+</LinearLayout>

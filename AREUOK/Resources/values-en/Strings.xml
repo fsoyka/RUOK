@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<resources>
+	<string name="app_name">AREUOK</string>
+	<string name="questionnaire_button">Questionnaire</string>
+	<string name="change_lang_button">Deutsche Sprache</string>
+	<string name="about_button">About</string>
+	<string name="Impressum">This app was programmed as part of the MedTech Startup School 2015 in Tübingen.</string>
+	<string name="back_button">Back</string>
+	<string name="whole_time_button">the whole time</string>
+	<string name="most_time_button">most of the time</string>
+	<string name="more_than_half_button">more than half the time</string>
+	<string name="less_than_half_button">less than half the time</string>
+	<string name="time_to_time_button">from time to time</string>
+	<string name="never_button">never</string>
+	<string name="continue_button">Continue</string>
+	<string name="less_than_thirteen">If your total score is less than 13, please contact your doctor.</string>
+	<string name="total_score">Your total score is:</string>
+	<string name="Q1of5">Question 1 of 5</string>
+	<string name="Q2of5">Question 2 of 5</string>
+	<string name="Q3of5">Question 3 of 5</string>
+	<string name="Q4of5">Question 4 of 5</string>
+	<string name="Q5of5">Question 5 of 5</string>
+	<string name="Score">Score:</string>
+	<string name="Question1">In the last 2 weeks, I was happy and in a good mood:</string>
+	<string name="Question2">In the last 2 weeks, I felt calm and relaxed:</string>
+	<string name="Question3">In the last 2 weeks, I felt active and full of energy:</string>
+	<string name="Question4">In the last 2 weeks, I felt fresh and well rested when I woke up:</string>
+	<string name="Question5">In the last 2 weeks, my daily life was full of interesting things:</string>
+</resources>
