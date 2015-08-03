@@ -78,10 +78,16 @@
     <AndroidResource Include="Resources\values-en\Strings.xml" />
     <AndroidResource Include="Resources\layout\About.axml" />
     <AndroidResource Include="Resources\values-de\Strings.xml" />
+    <AndroidResource Include="Resources\layout-large\QuestionnaireFifthScreen.axml" />
+    <AndroidResource Include="Resources\layout-large\QuestionnaireFirstScreen.axml" />
+    <AndroidResource Include="Resources\layout-large\QuestionnaireFourthScreen.axml" />
+    <AndroidResource Include="Resources\layout-large\QuestionnaireSecondScreen.axml" />
+    <AndroidResource Include="Resources\layout-large\QuestionnaireThirdScreen.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>
     <Folder Include="Resources\values-en\" />
     <Folder Include="Resources\values-de\" />
+    <Folder Include="Resources\layout-large\" />
   </ItemGroup>
 </Project>

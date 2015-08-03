@@ -84,8 +84,8 @@ namespace AREUOK
 			// aapt resource value: 0x7f050003
 			public const int linearLayout1 = 2131034115;
 			
-			// aapt resource value: 0x7f05000a
-			public const int space1 = 2131034122;
+			// aapt resource value: 0x7f05000b
+			public const int space1 = 2131034123;
 			
 			// aapt resource value: 0x7f050000
 			public const int textView1 = 2131034112;
@@ -93,8 +93,8 @@ namespace AREUOK
 			// aapt resource value: 0x7f050001
 			public const int textView2 = 2131034113;
 			
-			// aapt resource value: 0x7f05000b
-			public const int textView3 = 2131034123;
+			// aapt resource value: 0x7f05000a
+			public const int textView3 = 2131034122;
 			
 			// aapt resource value: 0x7f050006
 			public const int textView4 = 2131034118;
