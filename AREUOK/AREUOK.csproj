@@ -15,7 +15,7 @@
     <AndroidUseLatestPlatformSdk>False</AndroidUseLatestPlatformSdk>
     <AssemblyName>AREUOK</AssemblyName>
     <AndroidManifest>Properties\AndroidManifest.xml</AndroidManifest>
-    <TargetFrameworkVersion>v4.4</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.0.3</TargetFrameworkVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -83,6 +83,7 @@
     <AndroidResource Include="Resources\layout-large\QuestionnaireFourthScreen.axml" />
     <AndroidResource Include="Resources\layout-large\QuestionnaireSecondScreen.axml" />
     <AndroidResource Include="Resources\layout-large\QuestionnaireThirdScreen.axml" />
+    <AndroidResource Include="Resources\drawable-mdpi\RUOKHome.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

@@ -36,9 +36,11 @@ namespace AREUOK
 				//Debug output
 				Console.WriteLine("Language: {0}", conf.Locale.Language.ToString());
 				if (conf.Locale.Language == "de")
-					conf.SetLocale(Java.Util.Locale.English);
+					//conf.SetLocale(Java.Util.Locale.English); //only supported from API 17 on
+					conf.Locale = new Java.Util.Locale("en");
 				else
-					conf.SetLocale(Java.Util.Locale.German);
+					//conf.SetLocale(Java.Util.Locale.German);
+					conf.Locale = new Java.Util.Locale("de");
 				Android.Util.DisplayMetrics dm = this.Resources.DisplayMetrics;
 				this.Resources.UpdateConfiguration (conf, dm);
 				//Restart activity such that the changes take effect
