@@ -13,7 +13,7 @@ using Android.Widget;
 
 namespace AREUOK
 {
-	[Activity (Label = "R-U-OK", Icon = "@drawable/icon")]			
+	[Activity (Label = "R-U-OK", Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]			
 	public class QuestionnaireFifthScreen : Activity
 	{
 		protected override void OnCreate (Bundle bundle)

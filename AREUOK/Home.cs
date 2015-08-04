@@ -11,7 +11,7 @@ using Android.Content.Res;
 
 namespace AREUOK
 {
-	[Activity (Label = "R-U-OK", MainLauncher = true, Icon = "@drawable/icon")]
+	[Activity (Label = "R-U-OK", MainLauncher = true, Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait )]
 	public class Home : Activity
 	{
 
