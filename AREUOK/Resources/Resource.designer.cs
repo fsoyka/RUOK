@@ -81,8 +81,20 @@ namespace AREUOK
 			// aapt resource value: 0x7f050009
 			public const int button6 = 2131034121;
 			
+			// aapt resource value: 0x7f05000c
+			public const int editText1 = 2131034124;
+			
 			// aapt resource value: 0x7f050003
 			public const int linearLayout1 = 2131034115;
+			
+			// aapt resource value: 0x7f05000e
+			public const int radioButton1 = 2131034126;
+			
+			// aapt resource value: 0x7f05000f
+			public const int radioButton2 = 2131034127;
+			
+			// aapt resource value: 0x7f05000d
+			public const int radioGroup1 = 2131034125;
 			
 			// aapt resource value: 0x7f05000b
 			public const int space1 = 2131034123;
@@ -136,6 +148,9 @@ namespace AREUOK
 			// aapt resource value: 0x7f030007
 			public const int QuestionnaireThirdScreen = 2130903047;
 			
+			// aapt resource value: 0x7f030008
+			public const int Settings = 2130903048;
+			
 			static Layout()
 			{
 				global::Android.Runtime.ResourceIdManager.UpdateIdValues();
@@ -149,83 +164,101 @@ namespace AREUOK
 		public partial class String
 		{
 			
-			// aapt resource value: 0x7f040004
-			public const int Impressum = 2130968580;
+			// aapt resource value: 0x7f04001d
+			public const int English = 2130968605;
 			
-			// aapt resource value: 0x7f04000f
-			public const int Q1of5 = 2130968591;
+			// aapt resource value: 0x7f04001c
+			public const int German = 2130968604;
 			
-			// aapt resource value: 0x7f040010
-			public const int Q2of5 = 2130968592;
-			
-			// aapt resource value: 0x7f040011
-			public const int Q3of5 = 2130968593;
-			
-			// aapt resource value: 0x7f040012
-			public const int Q4of5 = 2130968594;
-			
-			// aapt resource value: 0x7f040013
-			public const int Q5of5 = 2130968595;
-			
-			// aapt resource value: 0x7f040015
-			public const int Question1 = 2130968597;
-			
-			// aapt resource value: 0x7f040016
-			public const int Question2 = 2130968598;
-			
-			// aapt resource value: 0x7f040017
-			public const int Question3 = 2130968599;
-			
-			// aapt resource value: 0x7f040018
-			public const int Question4 = 2130968600;
-			
-			// aapt resource value: 0x7f040019
-			public const int Question5 = 2130968601;
-			
-			// aapt resource value: 0x7f040014
-			public const int Score = 2130968596;
+			// aapt resource value: 0x7f04001f
+			public const int Greeting = 2130968607;
 			
 			// aapt resource value: 0x7f040003
-			public const int about_button = 2130968579;
+			public const int Impressum = 2130968579;
+			
+			// aapt resource value: 0x7f04001b
+			public const int Language = 2130968603;
+			
+			// aapt resource value: 0x7f040019
+			public const int Name = 2130968601;
+			
+			// aapt resource value: 0x7f04000e
+			public const int Q1of5 = 2130968590;
+			
+			// aapt resource value: 0x7f04000f
+			public const int Q2of5 = 2130968591;
+			
+			// aapt resource value: 0x7f040010
+			public const int Q3of5 = 2130968592;
+			
+			// aapt resource value: 0x7f040011
+			public const int Q4of5 = 2130968593;
+			
+			// aapt resource value: 0x7f040012
+			public const int Q5of5 = 2130968594;
+			
+			// aapt resource value: 0x7f040014
+			public const int Question1 = 2130968596;
+			
+			// aapt resource value: 0x7f040015
+			public const int Question2 = 2130968597;
+			
+			// aapt resource value: 0x7f040016
+			public const int Question3 = 2130968598;
+			
+			// aapt resource value: 0x7f040017
+			public const int Question4 = 2130968599;
+			
+			// aapt resource value: 0x7f040018
+			public const int Question5 = 2130968600;
+			
+			// aapt resource value: 0x7f040013
+			public const int Score = 2130968595;
+			
+			// aapt resource value: 0x7f04001e
+			public const int Settings = 2130968606;
+			
+			// aapt resource value: 0x7f04001a
+			public const int Standard_Name = 2130968602;
+			
+			// aapt resource value: 0x7f040002
+			public const int about_button = 2130968578;
 			
 			// aapt resource value: 0x7f040000
 			public const int app_name = 2130968576;
 			
-			// aapt resource value: 0x7f040005
-			public const int back_button = 2130968581;
-			
-			// aapt resource value: 0x7f040002
-			public const int change_lang_button = 2130968578;
-			
-			// aapt resource value: 0x7f04000c
-			public const int continue_button = 2130968588;
-			
-			// aapt resource value: 0x7f040009
-			public const int less_than_half_button = 2130968585;
-			
-			// aapt resource value: 0x7f04000d
-			public const int less_than_thirteen = 2130968589;
-			
-			// aapt resource value: 0x7f040008
-			public const int more_than_half_button = 2130968584;
-			
-			// aapt resource value: 0x7f040007
-			public const int most_time_button = 2130968583;
+			// aapt resource value: 0x7f040004
+			public const int back_button = 2130968580;
 			
 			// aapt resource value: 0x7f04000b
-			public const int never_button = 2130968587;
+			public const int continue_button = 2130968587;
+			
+			// aapt resource value: 0x7f040008
+			public const int less_than_half_button = 2130968584;
+			
+			// aapt resource value: 0x7f04000c
+			public const int less_than_thirteen = 2130968588;
+			
+			// aapt resource value: 0x7f040007
+			public const int more_than_half_button = 2130968583;
+			
+			// aapt resource value: 0x7f040006
+			public const int most_time_button = 2130968582;
+			
+			// aapt resource value: 0x7f04000a
+			public const int never_button = 2130968586;
 			
 			// aapt resource value: 0x7f040001
 			public const int questionnaire_button = 2130968577;
 			
-			// aapt resource value: 0x7f04000a
-			public const int time_to_time_button = 2130968586;
+			// aapt resource value: 0x7f040009
+			public const int time_to_time_button = 2130968585;
 			
-			// aapt resource value: 0x7f04000e
-			public const int total_score = 2130968590;
+			// aapt resource value: 0x7f04000d
+			public const int total_score = 2130968589;
 			
-			// aapt resource value: 0x7f040006
-			public const int whole_time_button = 2130968582;
+			// aapt resource value: 0x7f040005
+			public const int whole_time_button = 2130968581;
 			
 			static String()
 			{

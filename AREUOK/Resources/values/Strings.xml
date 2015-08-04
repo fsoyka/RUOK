@@ -2,7 +2,6 @@
 <resources>
 	<string name="app_name">AREUOK</string>
 	<string name="questionnaire_button">Fragebogen</string>
-	<string name="change_lang_button">Switch to English</string>
 	<string name="about_button">Impressum</string>
 	<string name="Impressum">Diese App wurde im Rahmen der MedTech Startup School 2015 in Tübingen programmiert.</string>
 	<string name="back_button">Zurück</string>
@@ -26,4 +25,11 @@
 	<string name="Question3">In den letzten 2 Wochen habe ich mich aktiv und voller Energie gefühlt:</string>
 	<string name="Question4">In den letzten 2 Wochen habe ich mich beim Aufwachen frisch und ausgeruht gefühlt:</string>
 	<string name="Question5">In den letzten 2 Wochen war mein Alltag voller Dinge, die mich interessieren:</string>
+	<string name="Name">Ihr Name:</string>
+	<string name="Standard_Name">Name</string>
+	<string name="Language">Sprache:</string>
+	<string name="German">Deutsch</string>
+	<string name="English">Englisch</string>
+	<string name="Settings">Einstellungen</string>
+	<string name="Greeting">Hallo</string>
 </resources>

@@ -6,6 +6,14 @@
     p1:id="@+id/linearLayout1"
     p1:background="@drawable/ruokhome">
     <TextView
+        p1:text="@string/Greeting"
+        p1:textAppearance="?android:attr/textAppearanceLarge"
+        p1:layout_width="match_parent"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/textView2"
+        p1:textColor="#ff000000"
+        p1:gravity="center" />
+    <TextView
         p1:text="ARE YOU OK?"
         p1:textAppearance="?android:attr/textAppearanceLarge"
         p1:layout_width="match_parent"
@@ -14,7 +22,7 @@
         p1:gravity="center"
         p1:textColor="#ff000000"
         p1:layout_marginBottom="40.0dp"
-        p1:layout_marginTop="20dp" />
+        p1:layout_marginTop="0dp" />
     <Button
         p1:text="@string/questionnaire_button"
         p1:layout_width="158dp"
@@ -22,7 +30,7 @@
         p1:id="@+id/button1"
         p1:layout_gravity="center" />
     <Button
-        p1:text="@string/change_lang_button"
+        p1:text="@string/Settings"
         p1:layout_width="158dp"
         p1:layout_height="wrap_content"
         p1:id="@+id/button2"

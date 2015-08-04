@@ -54,6 +54,7 @@
     <Compile Include="QuestionnaireFirstScreen.cs" />
     <Compile Include="Home.cs" />
     <Compile Include="About.cs" />
+    <Compile Include="Settings.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -84,6 +85,7 @@
     <AndroidResource Include="Resources\layout-large\QuestionnaireSecondScreen.axml" />
     <AndroidResource Include="Resources\layout-large\QuestionnaireThirdScreen.axml" />
     <AndroidResource Include="Resources\drawable-mdpi\RUOKHome.jpg" />
+    <AndroidResource Include="Resources\layout\Settings.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

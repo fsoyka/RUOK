@@ -2,7 +2,6 @@
 <resources>
 	<string name="app_name">AREUOK</string>
 	<string name="questionnaire_button">Questionnaire</string>
-	<string name="change_lang_button">Deutsche Sprache</string>
 	<string name="about_button">About</string>
 	<string name="Impressum">This app was programmed as part of the MedTech Startup School 2015 in Tübingen.</string>
 	<string name="back_button">Back</string>
@@ -26,4 +25,11 @@
 	<string name="Question3">In the last 2 weeks, I felt active and full of energy:</string>
 	<string name="Question4">In the last 2 weeks, I felt fresh and well rested when I woke up:</string>
 	<string name="Question5">In the last 2 weeks, my daily life was full of interesting things:</string>
+	<string name="Name">Your name:</string>
+	<string name="Standard_Name">Name</string>
+	<string name="Language">Language:</string>
+	<string name="German">German</string>
+	<string name="English">English</string>
+	<string name="Settings">Settings</string>
+	<string name="Greeting">Hi</string>
 </resources>

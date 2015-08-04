@@ -29,23 +29,9 @@ namespace AREUOK
 				StartActivity(intent);
 			};
 
-			Button LangChange = FindViewById<Button> (Resource.Id.button2);
-			LangChange.Click += delegate {
-				//change language
-				Android.Content.Res.Configuration conf = this.Resources.Configuration;
-				//Debug output
-				Console.WriteLine("Language: {0}", conf.Locale.Language.ToString());
-				if (conf.Locale.Language == "de")
-					//conf.SetLocale(Java.Util.Locale.English); //only supported from API 17 on
-					conf.Locale = new Java.Util.Locale("en");
-				else
-					//conf.SetLocale(Java.Util.Locale.German);
-					conf.Locale = new Java.Util.Locale("de");
-				Android.Util.DisplayMetrics dm = this.Resources.DisplayMetrics;
-				this.Resources.UpdateConfiguration (conf, dm);
-				//Restart activity such that the changes take effect
-				Intent intent = new Intent(this, typeof(Home));
-				intent.SetFlags(ActivityFlags.ClearTop); //remove the history and reload the home screen
+			Button SettingsButton = FindViewById<Button> (Resource.Id.button2);
+			SettingsButton.Click += delegate {
+				Intent intent = new Intent(this, typeof(Settings));
 				StartActivity(intent);
 			};
 
@@ -55,7 +41,31 @@ namespace AREUOK
 				Intent intent = new Intent(this, typeof(About));
 				StartActivity(intent);
 			};
-				
+
+			//check language preferences, if they are set apply them otherwise stay with the current language
+			ISharedPreferences sharedPref = GetSharedPreferences("com.FSoft.are_u_ok.PREFERENCES",FileCreationMode.Private);
+			String savedLanguage = sharedPref.GetString ("Language", "");
+			//for debuging
+		    //	Toast.MakeText (this, string.Format ("Language: {0}", savedLanguage), ToastLength.Short).Show ();
+
+			//if there is a saved language (length > 0) and the current language is different from the saved one, then change
+			Android.Content.Res.Configuration conf = this.Resources.Configuration;
+			if ((savedLanguage.Length > 0) & (conf.Locale.Language != savedLanguage)){
+				//set language and restart activity to see the effect
+				conf.Locale = new Java.Util.Locale(savedLanguage);
+				Android.Util.DisplayMetrics dm = this.Resources.DisplayMetrics;
+				this.Resources.UpdateConfiguration (conf, dm);
+				Intent intent = new Intent(this, typeof(Home));
+				intent.SetFlags(ActivityFlags.ClearTop); //remove the history
+				StartActivity(intent);
+			}
+
+			//if there is a saved name provided a personalized greeting
+			String savedName = sharedPref.GetString ("Name", "");
+			if (savedName.Length > 0) {
+				TextView WelcomeText = FindViewById<TextView> (Resource.Id.textView2);
+				WelcomeText.Text = string.Format ("{0} {1}", Resources.GetText (Resource.String.Greeting), savedName);
+			}
 		}
 	}
 }
