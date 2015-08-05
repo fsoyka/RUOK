@@ -57,6 +57,7 @@
     <Compile Include="Settings.cs" />
     <Compile Include="RUOKDatabase.cs" />
     <Compile Include="History.cs" />
+    <Compile Include="AlarmReceiver.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

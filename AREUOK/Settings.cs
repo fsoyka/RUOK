@@ -16,6 +16,7 @@ namespace AREUOK
 	[Activity (Label = "R-U-OK", Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]			
 	public class Settings : Activity
 	{
+
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
@@ -105,10 +106,15 @@ namespace AREUOK
 				StartActivity(intent);
 			};
 
-
+			//send a reminder 5 seconds after the button was pressed
+			Button ReminderButton = FindViewById<Button> (Resource.Id.button2);
+			ReminderButton.Click += delegate {
+				//Call setAlarm in the Receiver class
+				AlarmReceiver temp = new AlarmReceiver();
+				temp.SetAlarm(this);
+			};	
 				
 
-			//Also save the language preferences and check if they are saved when the activity is destroyed or all its data deleted
 		}
 	}
 }

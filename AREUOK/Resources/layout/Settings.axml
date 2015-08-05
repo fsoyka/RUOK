@@ -47,6 +47,11 @@
         android:layout_height="30dp"
         android:id="@+id/space1" />
     <Button
+        android:text="Test Reminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button2" />
+    <Button
         android:text="@string/back_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
