@@ -21,13 +21,20 @@
         p1:id="@+id/textView1"
         p1:gravity="center"
         p1:textColor="#ff000000"
-        p1:layout_marginBottom="40.0dp"
+        p1:layout_marginBottom="20.0dp"
         p1:layout_marginTop="0dp" />
     <Button
         p1:text="@string/questionnaire_button"
         p1:layout_width="158dp"
         p1:layout_height="wrap_content"
         p1:id="@+id/button1"
+        p1:layout_gravity="center" />
+    <Button
+        p1:text="@string/History"
+        p1:layout_width="158dp"
+        p1:layout_height="wrap_content"
+        p1:id="@+id/button4"
+        p1:layout_marginTop="27dp"
         p1:layout_gravity="center" />
     <Button
         p1:text="@string/Settings"

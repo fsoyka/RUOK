@@ -42,6 +42,13 @@ namespace AREUOK
 				StartActivity(intent);
 			};
 
+			Button HistoryButton = FindViewById<Button> (Resource.Id.button4);
+			HistoryButton.Click += delegate {
+				//create an intent to go to the next screen
+				Intent intent = new Intent(this, typeof(History));
+				StartActivity(intent);
+			};
+
 			//check language preferences, if they are set apply them otherwise stay with the current language
 			ISharedPreferences sharedPref = GetSharedPreferences("com.FSoft.are_u_ok.PREFERENCES",FileCreationMode.Private);
 			String savedLanguage = sharedPref.GetString ("Language", "");
@@ -65,7 +72,8 @@ namespace AREUOK
 			if (savedName.Length > 0) {
 				TextView WelcomeText = FindViewById<TextView> (Resource.Id.textView2);
 				WelcomeText.Text = string.Format ("{0} {1}", Resources.GetText (Resource.String.Greeting), savedName);
-			}
+			}				
+
 		}
 	}
 }

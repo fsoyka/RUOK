@@ -32,4 +32,6 @@
 	<string name="English">English</string>
 	<string name="Settings">Settings</string>
 	<string name="Greeting">Hi</string>
+	<string name="History">History</string>
+	<string name="DeleteAll">Delete all</string>
 </resources>
