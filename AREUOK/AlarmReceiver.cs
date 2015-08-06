@@ -16,15 +16,27 @@ namespace AREUOK
 	[BroadcastReceiver]
 	public class AlarmReceiver : BroadcastReceiver
 	{
-		public override void OnReceive (Context context, Intent intent)
-		{
+		public override void OnReceive (Context context, Intent intent) {
+	
+			PowerManager pm = (PowerManager)context.GetSystemService(Context.PowerService);
+			PowerManager.WakeLock w1 = pm.NewWakeLock (WakeLockFlags.Full | WakeLockFlags.AcquireCausesWakeup | WakeLockFlags.OnAfterRelease, "NotificationReceiver");
+			w1.Acquire ();
+
 			//Toast.MakeText (context, "Received intent!", ToastLength.Short).Show ();
 			var nMgr = (NotificationManager)context.GetSystemService (Context.NotificationService);
 			var notification = new Notification (Resource.Drawable.Icon, "Reminder R-U-OK");
+			//Clicking the pending intent does not go to the Home Activity Screen, but to the last activity that was active before leaving the app
 			var pendingIntent = PendingIntent.GetActivity (context, 0, new Intent (context, typeof(Home)), PendingIntentFlags.UpdateCurrent);
+			//Notification should be language specific
 			notification.SetLatestEventInfo (context, "Reminder R-U-OK", "Please fill out the questionnaire", pendingIntent);
 			notification.Flags |= NotificationFlags.AutoCancel;
 			nMgr.Notify (0, notification);
+
+			w1.Release ();
+
+			//check these pages for really waking up the device
+			// http://stackoverflow.com/questions/6864712/android-alarmmanager-not-waking-phone-up
+			// https://forums.xamarin.com/discussion/7490/alarm-manager
 		}
 
 		public void SetAlarm(Context context){
