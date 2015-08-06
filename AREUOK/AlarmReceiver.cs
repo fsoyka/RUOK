@@ -32,6 +32,10 @@ namespace AREUOK
 			notification.Flags |= NotificationFlags.AutoCancel;
 			nMgr.Notify (0, notification);
 
+			Vibrator vibrator = (Vibrator) context.GetSystemService(Context.VibratorService);            
+			if (vibrator != null)
+				vibrator.Vibrate(400);
+			
 			w1.Release ();
 
 			//check these pages for really waking up the device
