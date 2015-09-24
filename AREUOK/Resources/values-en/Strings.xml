@@ -34,4 +34,18 @@
 	<string name="Greeting">Hi</string>
 	<string name="History">History</string>
 	<string name="DeleteAll">Delete all</string>
+	<string name="HowAreYou">How are you?</string>
+	<string name="PeopleAroundYou">How many persons are with you?</string>
+	<string name="None">None</string>
+	<string name="One">One</string>
+	<string name="Many">Many</string>
+	<string name="WhatAreYouDoing">What are you doing?</string>
+	<string name="Leisure">Leisure</string>
+	<string name="Eating">Eating</string>
+	<string name="Work">Work</string>
+	<string name="Away">Away</string>
+	<string name="Home">Home</string>
+	<string name="AnswerQuestions">Please answer all questions</string>
+	<string name="ReminderTitle">Reminder R-U-OK</string>
+	<string name="ReminderText">Please fill out the questionnaire</string>
 </resources>

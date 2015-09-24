@@ -58,6 +58,9 @@
     <Compile Include="RUOKDatabase.cs" />
     <Compile Include="History.cs" />
     <Compile Include="AlarmReceiver.cs" />
+    <Compile Include="MoodAssessment.cs" />
+    <Compile Include="MoodDatabase.cs" />
+    <Compile Include="History_old.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -90,6 +93,9 @@
     <AndroidResource Include="Resources\drawable-mdpi\RUOKHome.jpg" />
     <AndroidResource Include="Resources\layout\Settings.axml" />
     <AndroidResource Include="Resources\layout\History.axml" />
+    <AndroidResource Include="Resources\layout\MoodAssessment.axml" />
+    <AndroidResource Include="Resources\drawable-mdpi\sad.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\happy.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

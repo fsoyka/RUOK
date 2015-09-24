@@ -25,7 +25,8 @@ namespace AREUOK
 			Button Questionnaire = FindViewById<Button> (Resource.Id.button1);
 			Questionnaire.Click += delegate {
 				//create an intent to go to the next screen
-				Intent intent = new Intent(this, typeof(QuestionnaireFirstScreen));
+				//Intent intent = new Intent(this, typeof(QuestionnaireFirstScreen));
+				Intent intent = new Intent(this, typeof(MoodAssessment));
 				StartActivity(intent);
 			};
 

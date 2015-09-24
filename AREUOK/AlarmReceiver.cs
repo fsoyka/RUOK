@@ -24,11 +24,11 @@ namespace AREUOK
 
 			//Toast.MakeText (context, "Received intent!", ToastLength.Short).Show ();
 			var nMgr = (NotificationManager)context.GetSystemService (Context.NotificationService);
-			var notification = new Notification (Resource.Drawable.Icon, "Reminder R-U-OK");
+			var notification = new Notification (Resource.Drawable.Icon, context.Resources.GetString(Resource.String.ReminderTitle));
 			//Clicking the pending intent does not go to the Home Activity Screen, but to the last activity that was active before leaving the app
 			var pendingIntent = PendingIntent.GetActivity (context, 0, new Intent (context, typeof(Home)), PendingIntentFlags.UpdateCurrent);
 			//Notification should be language specific
-			notification.SetLatestEventInfo (context, "Reminder R-U-OK", "Please fill out the questionnaire", pendingIntent);
+			notification.SetLatestEventInfo (context, context.Resources.GetString(Resource.String.ReminderTitle), context.Resources.GetString(Resource.String.ReminderText), pendingIntent);
 			notification.Flags |= NotificationFlags.AutoCancel;
 			nMgr.Notify (0, notification);
 
