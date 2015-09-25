@@ -39,7 +39,7 @@
 	<string name="None">None</string>
 	<string name="One">One</string>
 	<string name="Many">Many</string>
-	<string name="WhatAreYouDoing">What are you doing?</string>
+	<string name="WhatAreYouDoing">What are you doing where?</string>
 	<string name="Leisure">Leisure</string>
 	<string name="Eating">Eating</string>
 	<string name="Work">Work</string>
@@ -48,4 +48,5 @@
 	<string name="AnswerQuestions">Please answer all questions</string>
 	<string name="ReminderTitle">Reminder R-U-OK</string>
 	<string name="ReminderText">Please fill out the questionnaire</string>
+	<string name="Already5Times">Already tested 5 times today</string>
 </resources>

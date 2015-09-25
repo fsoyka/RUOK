@@ -39,7 +39,7 @@
 	<string name="None">Keiner</string>
 	<string name="One">Einer</string>
 	<string name="Many">Viele</string>
-	<string name="WhatAreYouDoing">Was machen Sie gerade?</string>
+	<string name="WhatAreYouDoing">Was machen Sie gerade wo?</string>
 	<string name="Leisure">Freizeit</string>
 	<string name="Eating">Essen</string>
 	<string name="Work">Arbeit</string>
@@ -48,4 +48,5 @@
 	<string name="AnswerQuestions">Bitte beantworten Sie alle Fragen</string>
 	<string name="ReminderTitle">Erinnerung R-U-OK</string>
 	<string name="ReminderText">Beantworten Sie bitte die Fragen</string>
+	<string name="Already5Times">Bereits 5 Mal getestet heute</string>
 </resources>

@@ -93,9 +93,9 @@
     <AndroidResource Include="Resources\drawable-mdpi\RUOKHome.jpg" />
     <AndroidResource Include="Resources\layout\Settings.axml" />
     <AndroidResource Include="Resources\layout\History.axml" />
-    <AndroidResource Include="Resources\layout\MoodAssessment.axml" />
     <AndroidResource Include="Resources\drawable-mdpi\sad.png" />
     <AndroidResource Include="Resources\drawable-mdpi\happy.png" />
+    <AndroidResource Include="Resources\layout\MoodAssessment.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

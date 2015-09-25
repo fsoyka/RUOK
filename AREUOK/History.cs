@@ -12,6 +12,10 @@ using Android.Views;
 using Android.Widget;
 using Android.Database.Sqlite; 
 
+//For exporting the DB
+using Java.Nio;
+using Java.IO;
+
 namespace AREUOK
 {
 	[Activity (Label = "R-U-OK", Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]			
@@ -64,6 +68,28 @@ namespace AREUOK
 			// use a SimpleCursorAdapter
 			listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.SimpleListItem2, cursor, fromColumns, toControlIDs);
 			listView.ItemClick += OnListItemClick;
+
+			//EXPORT BUTTON TO WRITE SQLITE DB FILE TO SD CARD
+			Button ExportButton = FindViewById<Button> (Resource.Id.button3);
+			ExportButton.Click += delegate {
+				File sd = GetExternalFilesDir(null);
+				File backupDB = new File(sd, "MoodData.db"); //this is where we're going to export to
+				//this is the database file
+				File data = GetDatabasePath("MoodData.db");
+				//Android.Widget.Toast.MakeText(this, data.AbsolutePath, Android.Widget.ToastLength.Short).Show();
+
+				OutputStream OS = new FileOutputStream(backupDB);
+				InputStream IS = new FileInputStream(data);
+				//the actual copying action
+				byte[] dataByte = new byte[IS.Available()];
+				IS.Read(dataByte);
+				OS.Write(dataByte);
+				IS.Close();
+				OS.Close();
+
+				//http://developer.android.com/reference/android/content/Context.html#getExternalFilesDir%28java.lang.String%29
+				//http://www.techrepublic.com/blog/software-engineer/export-sqlite-data-from-your-android-device/
+			};
 		}
 
 		protected void OnListItemClick(object sender, Android.Widget.AdapterView.ItemClickEventArgs e)

@@ -3,140 +3,155 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <TextView
-        android:text="@string/HowAreYou"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
-    <LinearLayout
-        android:orientation="horizontal"
+    <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/linearLayout1">
-        <ImageView
-            android:src="@drawable/sad"
-            android:id="@+id/imageViewSadHowAreYou"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:maxHeight="10dp"
-            android:adjustViewBounds="true"
-            android:cropToPadding="true"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="5dp"
-            android:layout_weight="0"
-            android:alpha="0.5" />
-        <SeekBar
-            android:id="@+id/seekBar1"
+        android:id="@+id/scrollView1">
+        <LinearLayout
+            android:orientation="vertical"
+            android:minWidth="25px"
+            android:minHeight="25px"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:max="8"
-            android:progress="4"
-            android:layout_weight="1" />
-        <ImageView
-            android:src="@drawable/happy"
-            android:id="@+id/imageViewHappyHowAreYou"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:scaleType="fitCenter"
-            android:maxHeight="10dp"
-            android:adjustViewBounds="true"
-            android:cropToPadding="true"
-            android:paddingTop="5dp"
-            android:paddingRight="5dp"
-            android:paddingBottom="5dp"
-            android:paddingLeft="5dp"
-            android:layout_weight="0"
-            android:alpha="0.5" />
-    </LinearLayout>
-    <TextView
-        android:text="@string/PeopleAroundYou"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout2">
-        <Button
-            android:text="@string/None"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/buttonNone"
-            android:layout_weight="1" />
-        <Button
-            android:text="@string/One"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/buttonOne"
-            android:layout_weight="1" />
-        <Button
-            android:text="@string/Many"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/buttonMany"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <TextView
-        android:text="@string/WhatAreYouDoing"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
-    <LinearLayout
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content">
-        <Button
-            android:text="@string/Leisure"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/buttonLeisure"
-            android:layout_weight="1" />
-        <Button
-            android:text="@string/Eating"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/buttonEating"
-            android:layout_weight="1" />
-        <Button
-            android:text="@string/Work"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/buttonWorking"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <LinearLayout
-        android:orientation="horizontal"
-        android:minWidth="25px"
-        android:minHeight="25px"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/linearLayout4">
-        <Button
-            android:text="@string/Away"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/buttonAway"
-            android:layout_weight="1" />
-        <Button
-            android:text="@string/Home"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent"
-            android:id="@+id/buttonHome"
-            android:layout_weight="1" />
-    </LinearLayout>
-    <Button
-        android:text="@string/continue_button"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/buttonContinue" />
+            android:id="@+id/linearLayout5">
+            <TextView
+                android:text="@string/HowAreYou"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView1" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout1">
+                <ImageView
+                    android:src="@drawable/sad"
+                    android:id="@+id/imageViewSadHowAreYou"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitCenter"
+                    android:maxHeight="10dp"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_weight="0"
+                    android:alpha="0.5" />
+                <SeekBar
+                    android:id="@+id/seekBar1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:max="8"
+                    android:progress="4"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:src="@drawable/happy"
+                    android:id="@+id/imageViewHappyHowAreYou"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitCenter"
+                    android:maxHeight="10dp"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_weight="0"
+                    android:alpha="0.5" />
+            </LinearLayout>
+            <TextView
+                android:text="@string/PeopleAroundYou"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView2" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout2">
+                <Button
+                    android:text="@string/None"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/buttonNone"
+                    android:layout_weight="1" />
+                <Button
+                    android:text="@string/One"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/buttonOne"
+                    android:layout_weight="1" />
+                <Button
+                    android:text="@string/Many"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/buttonMany"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <TextView
+                android:text="@string/WhatAreYouDoing"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textView3" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:id="@+id/linearLayout3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:text="@string/Leisure"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/buttonLeisure"
+                    android:layout_weight="1" />
+                <Button
+                    android:text="@string/Eating"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/buttonEating"
+                    android:layout_weight="1" />
+                <Button
+                    android:text="@string/Work"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/buttonWorking"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/linearLayout4">
+                <Button
+                    android:text="@string/Away"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/buttonAway"
+                    android:layout_weight="1" />
+                <Button
+                    android:text="@string/Home"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:id="@+id/buttonHome"
+                    android:layout_weight="1" />
+            </LinearLayout>
+            <Button
+                android:text="@string/continue_button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/buttonContinue" />
+        </LinearLayout>
+    </ScrollView>
 </LinearLayout>
