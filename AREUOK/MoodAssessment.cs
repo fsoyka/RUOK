@@ -19,8 +19,16 @@ namespace AREUOK
 		SeekBar _seekBarHowAreYou;
 		ImageView _sadHowAreYou;
 		ImageView _happyHowAreYou;
+		SeekBar _seekBarPosAffect;
+		ImageView _LeftPosAffect;
+		ImageView _RightPosAffect;
+		SeekBar _seekBarNegAffect;
+		ImageView _LeftNegAffect;
+		ImageView _RightNegAffect;
 
 		int nProgressHowAreYou; //saves the state of the progress bar for the How Are You question
+		int nProgressPosAffect; //saves the state of the progress bar for the positive Affect question
+		int nProgressNegAffect; //saves the state of the progress bar for the negative Affect question
 		int nPeopleAround; //saves the state of the People Around question: -1 = not set, 0 = none, 1 = one, 2 = many
 		int nWhere; //saves the state of the Where are you question: -1 = not set, 0 = away, 1 = home
 		int nWhat; //saves the state of the What are you doing question: -1 = not set, 0 = Leisure, 1 = Eating, 2 = Work
@@ -73,8 +81,57 @@ namespace AREUOK
 				//Toast.MakeText(this, "New Asked: " + alreadyAsked.ToString(), ToastLength.Short).Show();
 
 				//TODO: Provide the chosen questions with seekbars and smileys. Make sure to pick good smileys for the negative affect questions
+				//CODE FOR POSITIVE AND NEGATIVE SEEKBAR QUESTIONS
+				TextView posAffectText = FindViewById<TextView>(Resource.Id.textViewPosAffect);
+				TextView negAffectText = FindViewById<TextView>(Resource.Id.textViewNegAffect);
+				switch (posQuestion) {
+				case 0:
+					posAffectText.Text = GetString(Resource.String.PosAffect1);
+					break;
+				case 1:
+					posAffectText.Text = GetString(Resource.String.PosAffect2);
+					break;
+				case 2:
+					posAffectText.Text = GetString(Resource.String.PosAffect3);
+					break;
+				case 3:
+					posAffectText.Text = GetString(Resource.String.PosAffect4);
+					break;
+				case 4:
+					posAffectText.Text = GetString(Resource.String.PosAffect5);					
+					break;
+				}
+				_seekBarPosAffect = FindViewById<SeekBar>(Resource.Id.seekBarPosAffect);
+				_LeftPosAffect = FindViewById<ImageView> (Resource.Id.imageViewLeftPosAffect);
+				_RightPosAffect = FindViewById<ImageView> (Resource.Id.imageViewRightPosAffect);
+				nProgressPosAffect = _seekBarPosAffect.Progress;
+				_seekBarPosAffect.SetOnSeekBarChangeListener(this);
 
-				//SEEKBAR CODE
+				switch (negQuestion) {
+				case 0:
+					negAffectText.Text = GetString(Resource.String.NegAffect1);
+					break;
+				case 1:
+					negAffectText.Text = GetString(Resource.String.NegAffect2);
+					break;
+				case 2:
+					negAffectText.Text = GetString(Resource.String.NegAffect3);
+					break;
+				case 3:
+					negAffectText.Text = GetString(Resource.String.NegAffect4);
+					break;
+				case 4:
+					negAffectText.Text = GetString(Resource.String.NegAffect5);					
+					break;
+				}
+				_seekBarNegAffect = FindViewById<SeekBar>(Resource.Id.seekBarNegAffect);
+				_LeftNegAffect = FindViewById<ImageView> (Resource.Id.imageViewLeftNegAffect);
+				_RightNegAffect = FindViewById<ImageView> (Resource.Id.imageViewRightNegAffect);
+				nProgressNegAffect = _seekBarNegAffect.Progress;
+				_seekBarNegAffect.SetOnSeekBarChangeListener(this);
+
+
+				//SEEKBAR CODE FOR HOW ARE YOU
 				_seekBarHowAreYou = FindViewById<SeekBar>(Resource.Id.seekBar1);
 				_sadHowAreYou = FindViewById<ImageView> (Resource.Id.imageViewSadHowAreYou);
 				_happyHowAreYou = FindViewById<ImageView> (Resource.Id.imageViewHappyHowAreYou);
@@ -180,8 +237,8 @@ namespace AREUOK
 						insertValues.Put("what", nWhat);
 						insertValues.Put("location", nWhere);
 						insertValues.Put("QuestionFlags", alreadyAsked);
-						//TODO: here we have to save the answers of the questions asked
-						insertValues.Put("pos2", 2);
+						insertValues.Put("pos" + (posQuestion+1).ToString(), nProgressPosAffect);
+						insertValues.Put("neg" + (negQuestion+1).ToString(), nProgressNegAffect);
 
 
 						dbMood.WritableDatabase.Insert ("MoodData", null, insertValues);
@@ -249,10 +306,27 @@ namespace AREUOK
 		{
 			if (fromUser)
 			{
-				_sadHowAreYou.Alpha = (float)(seekBar.Max - seekBar.Progress) / seekBar.Max;
-				_happyHowAreYou.Alpha = (float)seekBar.Progress / seekBar.Max;
-				nProgressHowAreYou = seekBar.Progress;
+				switch (seekBar.Id) {
+				case Resource.Id.seekBar1:
+					_sadHowAreYou.Alpha = (float)(seekBar.Max - seekBar.Progress) / seekBar.Max;
+					_happyHowAreYou.Alpha = (float)seekBar.Progress / seekBar.Max;
+					nProgressHowAreYou = seekBar.Progress;
+					break;
+				case Resource.Id.seekBarPosAffect:
+					_LeftPosAffect.Alpha = (float)(seekBar.Max - seekBar.Progress) / seekBar.Max;
+					_RightPosAffect.Alpha = (float)seekBar.Progress / seekBar.Max;
+					nProgressPosAffect = seekBar.Progress;
+					break;
+				case Resource.Id.seekBarNegAffect:
+					_LeftNegAffect.Alpha = (float)(seekBar.Max - seekBar.Progress) / seekBar.Max;
+					_RightNegAffect.Alpha = (float)seekBar.Progress / seekBar.Max;
+					nProgressNegAffect = seekBar.Progress;
+					break;
+
+				}
+
 			}
+
 		}
 
 		public void OnStartTrackingTouch(SeekBar seekBar)

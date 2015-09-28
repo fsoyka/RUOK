@@ -68,6 +68,108 @@
                     android:alpha="0.5" />
             </LinearLayout>
             <TextView
+                android:text="@string/PosAffect1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:id="@+id/textViewPosAffect"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/linearLayout5"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/sad"
+                    android:id="@+id/imageViewLeftPosAffect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitCenter"
+                    android:maxHeight="10dp"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_weight="0"
+                    android:alpha="0.5" />
+                <SeekBar
+                    android:id="@+id/seekBarPosAffect"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:max="8"
+                    android:progress="4"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:src="@drawable/happy"
+                    android:id="@+id/imageViewRightPosAffect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitCenter"
+                    android:maxHeight="10dp"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_weight="0"
+                    android:alpha="0.5" />
+            </LinearLayout>
+            <TextView
+                android:text="@string/NegAffect1"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/textViewNegAffect" />
+            <LinearLayout
+                android:orientation="horizontal"
+                android:minWidth="25px"
+                android:minHeight="25px"
+                android:id="@+id/linearLayout6"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <ImageView
+                    android:src="@drawable/sad"
+                    android:id="@+id/imageViewLeftNegAffect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitCenter"
+                    android:maxHeight="10dp"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_weight="0"
+                    android:alpha="0.5" />
+                <SeekBar
+                    android:id="@+id/seekBarNegAffect"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:max="8"
+                    android:progress="4"
+                    android:layout_weight="1" />
+                <ImageView
+                    android:src="@drawable/happy"
+                    android:id="@+id/imageViewRightNegAffect"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:scaleType="fitCenter"
+                    android:maxHeight="10dp"
+                    android:adjustViewBounds="true"
+                    android:cropToPadding="true"
+                    android:paddingTop="5dp"
+                    android:paddingRight="5dp"
+                    android:paddingBottom="5dp"
+                    android:paddingLeft="5dp"
+                    android:layout_weight="0"
+                    android:alpha="0.5" />
+            </LinearLayout>
+            <TextView
                 android:text="@string/PeopleAroundYou"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:layout_width="match_parent"

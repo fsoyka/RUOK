@@ -39,7 +39,7 @@
 	<string name="None">None</string>
 	<string name="One">One</string>
 	<string name="Many">Many</string>
-	<string name="WhatAreYouDoing">What are you doing where?</string>
+	<string name="WhatAreYouDoing">What are you doing, and where?</string>
 	<string name="Leisure">Leisure</string>
 	<string name="Eating">Eating</string>
 	<string name="Work">Work</string>
@@ -49,4 +49,14 @@
 	<string name="ReminderTitle">Reminder R-U-OK</string>
 	<string name="ReminderText">Please fill out the questionnaire</string>
 	<string name="Already5Times">Already tested 5 times today</string>
+	<string name="PosAffect1">How happy are you?</string>
+	<string name="PosAffect2">How optimistic are you?</string>
+	<string name="PosAffect3">How satisfied are you?</string>
+	<string name="PosAffect4">How relaxed are you?</string>
+	<string name="PosAffect5">5th question is still missing</string>
+	<string name="NegAffect1">How sad are you?</string>
+	<string name="NegAffect2">How afraid are you?</string>
+	<string name="NegAffect3">How lonely are you?</string>
+	<string name="NegAffect4">How agitated are you?</string>
+	<string name="NegAffect5">How angry are you?</string>
 </resources>
