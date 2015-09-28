@@ -96,6 +96,8 @@
     <AndroidResource Include="Resources\drawable-mdpi\sad.png" />
     <AndroidResource Include="Resources\drawable-mdpi\happy.png" />
     <AndroidResource Include="Resources\layout\MoodAssessment.axml" />
+    <AndroidResource Include="Resources\drawable-mdpi\afraid.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\angry.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

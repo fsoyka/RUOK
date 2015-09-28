@@ -65,7 +65,7 @@ namespace AREUOK
 			string[] fromColumns = new string[] {"date", "mood"};
 			int[] toControlIDs = new int[] {Android.Resource.Id.Text1, Android.Resource.Id.Text2};
 
-			// use a SimpleCursorAdapter
+			// use a SimpleCursorAdapter, could use our own Layout for the view: https://thinkandroid.wordpress.com/2010/01/09/simplecursoradapters-and-listviews/
 			listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.SimpleListItem2, cursor, fromColumns, toControlIDs);
 			listView.ItemClick += OnListItemClick;
 

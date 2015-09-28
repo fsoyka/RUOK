@@ -38,7 +38,7 @@ namespace AREUOK
 
 		Random rnd;
 
-		//Try to implement a scroll down option for the screen, use a scrollview: http://stackoverflow.com/questions/4055537/how-do-you-make-a-linearlayout-scrollable
+		//use a scrollview: http://stackoverflow.com/questions/4055537/how-do-you-make-a-linearlayout-scrollable
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -80,7 +80,7 @@ namespace AREUOK
 				alreadyAsked += (int)Math.Pow(2,posQuestion) + (int)Math.Pow(2,negQuestion+5);
 				//Toast.MakeText(this, "New Asked: " + alreadyAsked.ToString(), ToastLength.Short).Show();
 
-				//TODO: Provide the chosen questions with seekbars and smileys. Make sure to pick good smileys for the negative affect questions
+				//Provide the chosen questions with seekbars and smileys. Make sure to pick good smileys for the negative affect questions
 				//CODE FOR POSITIVE AND NEGATIVE SEEKBAR QUESTIONS
 				TextView posAffectText = FindViewById<TextView>(Resource.Id.textViewPosAffect);
 				TextView negAffectText = FindViewById<TextView>(Resource.Id.textViewNegAffect);
@@ -107,12 +107,20 @@ namespace AREUOK
 				nProgressPosAffect = _seekBarPosAffect.Progress;
 				_seekBarPosAffect.SetOnSeekBarChangeListener(this);
 
+				_seekBarNegAffect = FindViewById<SeekBar>(Resource.Id.seekBarNegAffect);
+				_LeftNegAffect = FindViewById<ImageView> (Resource.Id.imageViewLeftNegAffect);
+				_RightNegAffect = FindViewById<ImageView> (Resource.Id.imageViewRightNegAffect);
+				nProgressNegAffect = _seekBarNegAffect.Progress;
+				_seekBarNegAffect.SetOnSeekBarChangeListener(this);
+
 				switch (negQuestion) {
 				case 0:
 					negAffectText.Text = GetString(Resource.String.NegAffect1);
 					break;
 				case 1:
 					negAffectText.Text = GetString(Resource.String.NegAffect2);
+					//change sad smiley to afraid
+					_LeftNegAffect.SetImageResource(Resource.Drawable.afraid);
 					break;
 				case 2:
 					negAffectText.Text = GetString(Resource.String.NegAffect3);
@@ -121,15 +129,11 @@ namespace AREUOK
 					negAffectText.Text = GetString(Resource.String.NegAffect4);
 					break;
 				case 4:
-					negAffectText.Text = GetString(Resource.String.NegAffect5);					
+					negAffectText.Text = GetString(Resource.String.NegAffect5);	
+					//change sad smiley to angry
+					_LeftNegAffect.SetImageResource(Resource.Drawable.angry);
 					break;
 				}
-				_seekBarNegAffect = FindViewById<SeekBar>(Resource.Id.seekBarNegAffect);
-				_LeftNegAffect = FindViewById<ImageView> (Resource.Id.imageViewLeftNegAffect);
-				_RightNegAffect = FindViewById<ImageView> (Resource.Id.imageViewRightNegAffect);
-				nProgressNegAffect = _seekBarNegAffect.Progress;
-				_seekBarNegAffect.SetOnSeekBarChangeListener(this);
-
 
 				//SEEKBAR CODE FOR HOW ARE YOU
 				_seekBarHowAreYou = FindViewById<SeekBar>(Resource.Id.seekBar1);
@@ -322,7 +326,6 @@ namespace AREUOK
 					_RightNegAffect.Alpha = (float)seekBar.Progress / seekBar.Max;
 					nProgressNegAffect = seekBar.Progress;
 					break;
-
 				}
 
 			}
