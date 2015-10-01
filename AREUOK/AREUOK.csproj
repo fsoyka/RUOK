@@ -42,6 +42,12 @@
     <Reference Include="System.Xml" />
     <Reference Include="System.Core" />
     <Reference Include="Mono.Android" />
+    <Reference Include="OxyPlot">
+      <HintPath>..\packages\OxyPlot.Core.2015.1.999-alpha\lib\portable-net45+netcore45+wpa81+wp8+MonoAndroid1+MonoTouch1+Xamarin.iOS10\OxyPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="OxyPlot.Xamarin.Android">
+      <HintPath>..\packages\OxyPlot.Xamarin.Android.2015.1.999-alpha\lib\MonoAndroid\OxyPlot.Xamarin.Android.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -56,16 +62,18 @@
     <Compile Include="About.cs" />
     <Compile Include="Settings.cs" />
     <Compile Include="RUOKDatabase.cs" />
-    <Compile Include="History.cs" />
     <Compile Include="AlarmReceiver.cs" />
     <Compile Include="MoodAssessment.cs" />
     <Compile Include="MoodDatabase.cs" />
     <Compile Include="History_old.cs" />
+    <Compile Include="History_List.cs" />
+    <Compile Include="History.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Properties\AndroidManifest.xml" />
     <None Include="Assets\AboutAssets.txt" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\values\Strings.xml" />
@@ -92,12 +100,13 @@
     <AndroidResource Include="Resources\layout-large\QuestionnaireThirdScreen.axml" />
     <AndroidResource Include="Resources\drawable-mdpi\RUOKHome.jpg" />
     <AndroidResource Include="Resources\layout\Settings.axml" />
-    <AndroidResource Include="Resources\layout\History.axml" />
     <AndroidResource Include="Resources\drawable-mdpi\sad.png" />
     <AndroidResource Include="Resources\drawable-mdpi\happy.png" />
     <AndroidResource Include="Resources\layout\MoodAssessment.axml" />
     <AndroidResource Include="Resources\drawable-mdpi\afraid.png" />
     <AndroidResource Include="Resources\drawable-mdpi\angry.png" />
+    <AndroidResource Include="Resources\layout\History_List.axml" />
+    <AndroidResource Include="Resources\layout\History.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

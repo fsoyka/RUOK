@@ -16,6 +16,11 @@ using Android.Database.Sqlite;
 using Java.Nio;
 using Java.IO;
 
+//for plotting
+using OxyPlot;
+using OxyPlot.Series;
+using OxyPlot.Xamarin.Android;
+
 namespace AREUOK
 {
 	[Activity (Label = "R-U-OK", Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Portrait)]			
@@ -23,7 +28,9 @@ namespace AREUOK
 	{
 		MoodDatabase db;
 		Android.Database.ICursor cursor;
-		ListView listView;
+		//for plotting
+		private PlotView plotViewModel;
+		public PlotModel MyModel { get; set; }
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -31,7 +38,6 @@ namespace AREUOK
 
 			// Create your application here
 			SetContentView(Resource.Layout.History);
-			listView = FindViewById<ListView>(Resource.Id.listView1);
 			db = new MoodDatabase(this);
 
 			Button BackHome = FindViewById<Button> (Resource.Id.button1);
@@ -52,22 +58,6 @@ namespace AREUOK
 				intent.SetFlags(ActivityFlags.ClearTop); //remove the history and go back to home screen
 				StartActivity(intent);
 			};
-
-			//query database and link to the listview
-			cursor = db.ReadableDatabase.RawQuery("SELECT * FROM MoodData ORDER BY _id DESC", null); // cursor query
-			//why this command is deprecated and what should be used instead: http://www.androiddesignpatterns.com/2012/07/loaders-and-loadermanager-background.html
-			//http://www.vogella.com/tutorials/AndroidSQLite/article.html
-			//http://www.codeproject.com/Articles/792883/Using-Sqlite-in-a-Xamarin-Android-Application-Deve
-			StartManagingCursor(cursor);
-
-			// which columns map to which layout controls
-			//string[] fromColumns = new string[] {"date", "time", "mood", "people", "what", "location"};
-			string[] fromColumns = new string[] {"date", "mood"};
-			int[] toControlIDs = new int[] {Android.Resource.Id.Text1, Android.Resource.Id.Text2};
-
-			// use a SimpleCursorAdapter, could use our own Layout for the view: https://thinkandroid.wordpress.com/2010/01/09/simplecursoradapters-and-listviews/
-			listView.Adapter = new SimpleCursorAdapter (this, Android.Resource.Layout.SimpleListItem2, cursor, fromColumns, toControlIDs);
-			listView.ItemClick += OnListItemClick;
 
 			//EXPORT BUTTON TO WRITE SQLITE DB FILE TO SD CARD
 			Button ExportButton = FindViewById<Button> (Resource.Id.button3);
@@ -90,24 +80,73 @@ namespace AREUOK
 				//http://developer.android.com/reference/android/content/Context.html#getExternalFilesDir%28java.lang.String%29
 				//http://www.techrepublic.com/blog/software-engineer/export-sqlite-data-from-your-android-device/
 			};
-		}
 
-		protected void OnListItemClick(object sender, Android.Widget.AdapterView.ItemClickEventArgs e)
-		{
-			var obj = listView.Adapter.GetItem(e.Position);
-			var curs = (Android.Database.ICursor)obj;
-			var text = curs.GetString(1); // 'date' is column 1 These refer to the absolute columns in the db not the columns specified above for showing in the listview
-			var text2 = curs.GetString(3); // 'time' is column 2
-			Android.Widget.Toast.MakeText(this, text + " " + text2, Android.Widget.ToastLength.Short).Show();
-			//System.Console.WriteLine("Clicked on " + text);
+			//Create Plot
+			// http://blog.bartdemeyer.be/2013/03/creating-graphs-in-wpf-using-oxyplot/
+
+			plotViewModel = FindViewById<PlotView>(Resource.Id.plotViewModel);
+
+			//query database
+			cursor = db.ReadableDatabase.RawQuery("SELECT date, time, mood FROM MoodData", null); // cursor query
+
+			//read out date and time and convert back to DateTime item for plotting
+//			cursor.MoveToFirst();
+//			string date_temp = cursor.GetString(cursor.GetColumnIndex("date"));
+//			string time_temp = cursor.GetString(cursor.GetColumnIndex("time"));
+//			DateTime date_time_temp = DateTime.ParseExact (date_temp + " " + time_temp, "dd.MM.yy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+//			//print for debug
+//			System.Console.WriteLine("Date Time: " + date_time_temp.ToString());
+
+			var lineSerie = new LineSeries();
+
+			for(int ii = 0; ii < cursor.Count; ii++) {
+				cursor.MoveToPosition(ii);
+				//read out date and time and convert back to DateTime item for plotting
+				string date_temp = cursor.GetString(cursor.GetColumnIndex("date"));
+				string time_temp = cursor.GetString(cursor.GetColumnIndex("time"));
+				DateTime date_time_temp = DateTime.ParseExact (date_temp + " " + time_temp, "dd.MM.yy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
+				//System.Console.WriteLine("Date Time: " + date_time_temp.ToString());
+				//add point (date_time, mood) to line series
+				lineSerie.Points.Add(new DataPoint(OxyPlot.Axes.DateTimeAxis.ToDouble(date_time_temp),(double)cursor.GetInt(cursor.GetColumnIndex("mood"))));
+			}
+
+			PlotModel temp = new PlotModel();
+			//define axes
+			var dateAxis = new OxyPlot.Axes.DateTimeAxis();
+			dateAxis.Position = OxyPlot.Axes.AxisPosition.Bottom;
+			dateAxis.StringFormat = "dd/MM HH:mm";
+			dateAxis.Title = "Time";
+			//dateAxis.FontSize = 8;  //TODO Fix font size for small devices
+			temp.Axes.Add(dateAxis);
+			var valueAxis = new OxyPlot.Axes.LinearAxis ();
+			valueAxis.Position = OxyPlot.Axes.AxisPosition.Left;
+			valueAxis.Title = "Mood";
+			//valueAxis.FontSize = 8;
+			valueAxis.Maximum = 8.5;
+			valueAxis.Minimum = 0;
+			valueAxis.AbsoluteMinimum = 0;
+			valueAxis.AbsoluteMaximum = 8.5;
+			valueAxis.MajorTickSize = 2;
+			valueAxis.IsZoomEnabled = false;
+			valueAxis.StringFormat = "0";
+			temp.Axes.Add(valueAxis);
+			lineSerie.MarkerType = MarkerType.Square;
+			lineSerie.MarkerSize = 8;
+			lineSerie.LabelFormatString = "{1}";  //http://discussion.oxyplot.org/topic/490066-trackerformatstring-question/
+			temp.Series.Add(lineSerie);
+			MyModel = temp;
+
+			plotViewModel.Model = MyModel;
+
 		}
 
 		protected override void OnDestroy ()
 		{
-			StopManagingCursor(cursor);
 			cursor.Close();
+			db.Close ();
 			base.OnDestroy();
 		}
+			
 	}
 }
 

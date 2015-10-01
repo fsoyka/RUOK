@@ -341,6 +341,13 @@ namespace AREUOK
 		{
 			//System.Diagnostics.Debug.WriteLine("Stopped tracking changes.");
 		}
+
+		protected override void OnDestroy ()
+		{
+			cursor.Close();
+			dbMood.Close ();
+			base.OnDestroy();
+		}
 	}
 }
 
