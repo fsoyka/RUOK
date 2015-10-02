@@ -83,6 +83,7 @@ namespace AREUOK
 				editor.Commit ();
 				
 				Intent intent = new Intent(this, typeof(Settings));
+				intent.SetFlags(ActivityFlags.ClearTop); //remove the history 
 				StartActivity(intent);
 			};
 
@@ -103,6 +104,7 @@ namespace AREUOK
 				editor.Commit ();
 
 				Intent intent = new Intent(this, typeof(Settings));
+				intent.SetFlags(ActivityFlags.ClearTop); //remove the history 
 				StartActivity(intent);
 			};
 

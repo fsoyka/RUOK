@@ -16,10 +16,6 @@ using Android.Database.Sqlite;
 using Java.Nio;
 using Java.IO;
 
-//for plotting
-using OxyPlot;
-using OxyPlot.Series;
-using OxyPlot.Xamarin.Android;
 
 namespace AREUOK
 {
@@ -27,10 +23,6 @@ namespace AREUOK
 	public class History : Activity
 	{
 		MoodDatabase db;
-		Android.Database.ICursor cursor;
-		//for plotting
-		private PlotView plotViewModel;
-		public PlotModel MyModel { get; set; }
 
 		protected override void OnCreate (Bundle bundle)
 		{
@@ -39,6 +31,45 @@ namespace AREUOK
 			// Create your application here
 			SetContentView(Resource.Layout.History);
 			db = new MoodDatabase(this);
+
+			Button MoodTime = FindViewById<Button> (Resource.Id.buttonMoodTime);
+			MoodTime.Click += delegate {
+				//create an intent to go to the next screen
+				Intent intent = new Intent(this, typeof(MoodTime));
+				StartActivity(intent);
+			};
+
+			Button MoodPeople = FindViewById<Button> (Resource.Id.buttonMoodPeople);
+			MoodPeople.Click += delegate {
+				//create an intent to go to the next screen
+				Intent intent = new Intent(this, typeof(MoodPeople));
+				StartActivity(intent);
+			};
+
+
+			Button ExDB = FindViewById<Button> (Resource.Id.buttonExDB);
+			ExDB.Click += delegate {
+				//delete current DB and fill it with an example dataset
+				db.WritableDatabase.ExecSQL("DROP TABLE IF EXISTS MoodData");
+				db.WritableDatabase.ExecSQL(MoodDatabase.create_table_sql);
+				//we want histograms that show bad mood when you are alone and good mood when you are with people
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('29.09.15', '07:30', 3, 0, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('29.09.15', '09:30', 3, 0, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('29.09.15', '11:30', 7, 2, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('29.09.15', '16:30', 1, 0, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('29.09.15', '20:30', 6, 2, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('30.09.15', '07:30', 3, 0, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('30.09.15', '09:30', 2, 0, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('30.09.15', '11:30', 7, 2, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('30.09.15', '16:30', 1, 0, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('30.09.15', '20:30', 6, 2, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('01.10.15', '09:30', 2, 0, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('01.10.15', '11:30', 7, 2, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('01.10.15', '13:30', 1, 0, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('01.10.15', '16:30', 8, 2, 1, 1, 1023)");
+				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('01.10.15', '18:30', 3, 0, 1, 1, 1023)");
+			};
+				
 
 			Button BackHome = FindViewById<Button> (Resource.Id.button1);
 			BackHome.Click += delegate {
@@ -55,7 +86,7 @@ namespace AREUOK
 				db.WritableDatabase.ExecSQL(MoodDatabase.create_table_sql);
 				//restart this activity in order to update the view
 				Intent intent = new Intent(this, typeof(History));
-				intent.SetFlags(ActivityFlags.ClearTop); //remove the history and go back to home screen
+				intent.SetFlags(ActivityFlags.ClearTop); //remove the history 
 				StartActivity(intent);
 			};
 
@@ -80,69 +111,13 @@ namespace AREUOK
 				//http://developer.android.com/reference/android/content/Context.html#getExternalFilesDir%28java.lang.String%29
 				//http://www.techrepublic.com/blog/software-engineer/export-sqlite-data-from-your-android-device/
 			};
+				
 
-			//Create Plot
-			// http://blog.bartdemeyer.be/2013/03/creating-graphs-in-wpf-using-oxyplot/
-
-			plotViewModel = FindViewById<PlotView>(Resource.Id.plotViewModel);
-
-			//query database
-			cursor = db.ReadableDatabase.RawQuery("SELECT date, time, mood FROM MoodData", null); // cursor query
-
-			//read out date and time and convert back to DateTime item for plotting
-//			cursor.MoveToFirst();
-//			string date_temp = cursor.GetString(cursor.GetColumnIndex("date"));
-//			string time_temp = cursor.GetString(cursor.GetColumnIndex("time"));
-//			DateTime date_time_temp = DateTime.ParseExact (date_temp + " " + time_temp, "dd.MM.yy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-//			//print for debug
-//			System.Console.WriteLine("Date Time: " + date_time_temp.ToString());
-
-			var lineSerie = new LineSeries();
-
-			for(int ii = 0; ii < cursor.Count; ii++) {
-				cursor.MoveToPosition(ii);
-				//read out date and time and convert back to DateTime item for plotting
-				string date_temp = cursor.GetString(cursor.GetColumnIndex("date"));
-				string time_temp = cursor.GetString(cursor.GetColumnIndex("time"));
-				DateTime date_time_temp = DateTime.ParseExact (date_temp + " " + time_temp, "dd.MM.yy HH:mm", System.Globalization.CultureInfo.InvariantCulture);
-				//System.Console.WriteLine("Date Time: " + date_time_temp.ToString());
-				//add point (date_time, mood) to line series
-				lineSerie.Points.Add(new DataPoint(OxyPlot.Axes.DateTimeAxis.ToDouble(date_time_temp),(double)cursor.GetInt(cursor.GetColumnIndex("mood"))));
-			}
-
-			PlotModel temp = new PlotModel();
-			//define axes
-			var dateAxis = new OxyPlot.Axes.DateTimeAxis();
-			dateAxis.Position = OxyPlot.Axes.AxisPosition.Bottom;
-			dateAxis.StringFormat = "dd/MM HH:mm";
-			dateAxis.Title = "Time";
-			//dateAxis.FontSize = 8;  //TODO Fix font size for small devices
-			temp.Axes.Add(dateAxis);
-			var valueAxis = new OxyPlot.Axes.LinearAxis ();
-			valueAxis.Position = OxyPlot.Axes.AxisPosition.Left;
-			valueAxis.Title = "Mood";
-			//valueAxis.FontSize = 8;
-			valueAxis.Maximum = 8.5;
-			valueAxis.Minimum = 0;
-			valueAxis.AbsoluteMinimum = 0;
-			valueAxis.AbsoluteMaximum = 8.5;
-			valueAxis.MajorTickSize = 2;
-			valueAxis.IsZoomEnabled = false;
-			valueAxis.StringFormat = "0";
-			temp.Axes.Add(valueAxis);
-			lineSerie.MarkerType = MarkerType.Square;
-			lineSerie.MarkerSize = 8;
-			lineSerie.LabelFormatString = "{1}";  //http://discussion.oxyplot.org/topic/490066-trackerformatstring-question/
-			temp.Series.Add(lineSerie);
-			MyModel = temp;
-
-			plotViewModel.Model = MyModel;
 
 		}
 
 		protected override void OnDestroy ()
 		{
-			cursor.Close();
 			db.Close ();
 			base.OnDestroy();
 		}

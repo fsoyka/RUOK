@@ -78,116 +78,131 @@ namespace AREUOK
 			// aapt resource value: 0x7f050002
 			public const int button1 = 2131034114;
 			
-			// aapt resource value: 0x7f050005
-			public const int button2 = 2131034117;
-			
-			// aapt resource value: 0x7f050004
-			public const int button3 = 2131034116;
-			
-			// aapt resource value: 0x7f050008
-			public const int button4 = 2131034120;
-			
-			// aapt resource value: 0x7f050025
-			public const int button5 = 2131034149;
-			
-			// aapt resource value: 0x7f050026
-			public const int button6 = 2131034150;
-			
-			// aapt resource value: 0x7f050021
-			public const int buttonAway = 2131034145;
-			
-			// aapt resource value: 0x7f050023
-			public const int buttonContinue = 2131034147;
-			
-			// aapt resource value: 0x7f05001e
-			public const int buttonEating = 2131034142;
-			
-			// aapt resource value: 0x7f050022
-			public const int buttonHome = 2131034146;
-			
-			// aapt resource value: 0x7f05001d
-			public const int buttonLeisure = 2131034141;
-			
-			// aapt resource value: 0x7f05001a
-			public const int buttonMany = 2131034138;
-			
-			// aapt resource value: 0x7f050018
-			public const int buttonNone = 2131034136;
-			
-			// aapt resource value: 0x7f050019
-			public const int buttonOne = 2131034137;
-			
-			// aapt resource value: 0x7f05001f
-			public const int buttonWorking = 2131034143;
-			
-			// aapt resource value: 0x7f050028
-			public const int editText1 = 2131034152;
-			
-			// aapt resource value: 0x7f05000d
-			public const int imageViewHappyHowAreYou = 2131034125;
-			
-			// aapt resource value: 0x7f050014
-			public const int imageViewLeftNegAffect = 2131034132;
-			
-			// aapt resource value: 0x7f05000f
-			public const int imageViewLeftPosAffect = 2131034127;
-			
-			// aapt resource value: 0x7f050016
-			public const int imageViewRightNegAffect = 2131034134;
-			
-			// aapt resource value: 0x7f050011
-			public const int imageViewRightPosAffect = 2131034129;
-			
-			// aapt resource value: 0x7f05000b
-			public const int imageViewSadHowAreYou = 2131034123;
-			
 			// aapt resource value: 0x7f050007
-			public const int linearLayout1 = 2131034119;
-			
-			// aapt resource value: 0x7f050017
-			public const int linearLayout2 = 2131034135;
-			
-			// aapt resource value: 0x7f05001c
-			public const int linearLayout3 = 2131034140;
-			
-			// aapt resource value: 0x7f050020
-			public const int linearLayout4 = 2131034144;
-			
-			// aapt resource value: 0x7f05000a
-			public const int linearLayout5 = 2131034122;
-			
-			// aapt resource value: 0x7f050013
-			public const int linearLayout6 = 2131034131;
+			public const int button2 = 2131034119;
 			
 			// aapt resource value: 0x7f050006
-			public const int listView1 = 2131034118;
+			public const int button3 = 2131034118;
 			
-			// aapt resource value: 0x7f050003
-			public const int plotViewModel = 2131034115;
-			
-			// aapt resource value: 0x7f05002a
-			public const int radioButton1 = 2131034154;
+			// aapt resource value: 0x7f05000b
+			public const int button4 = 2131034123;
 			
 			// aapt resource value: 0x7f05002b
-			public const int radioButton2 = 2131034155;
+			public const int button5 = 2131034155;
 			
-			// aapt resource value: 0x7f050029
-			public const int radioGroup1 = 2131034153;
+			// aapt resource value: 0x7f05002c
+			public const int button6 = 2131034156;
 			
-			// aapt resource value: 0x7f050009
-			public const int scrollView1 = 2131034121;
+			// aapt resource value: 0x7f050024
+			public const int buttonAway = 2131034148;
 			
-			// aapt resource value: 0x7f05000c
-			public const int seekBar1 = 2131034124;
+			// aapt resource value: 0x7f050026
+			public const int buttonContinue = 2131034150;
 			
-			// aapt resource value: 0x7f050015
-			public const int seekBarNegAffect = 2131034133;
+			// aapt resource value: 0x7f050021
+			public const int buttonEating = 2131034145;
+			
+			// aapt resource value: 0x7f050008
+			public const int buttonExDB = 2131034120;
+			
+			// aapt resource value: 0x7f050025
+			public const int buttonHome = 2131034149;
+			
+			// aapt resource value: 0x7f050020
+			public const int buttonLeisure = 2131034144;
+			
+			// aapt resource value: 0x7f05001d
+			public const int buttonMany = 2131034141;
+			
+			// aapt resource value: 0x7f050004
+			public const int buttonMoodPeople = 2131034116;
+			
+			// aapt resource value: 0x7f050003
+			public const int buttonMoodTime = 2131034115;
+			
+			// aapt resource value: 0x7f05001b
+			public const int buttonNone = 2131034139;
+			
+			// aapt resource value: 0x7f05001c
+			public const int buttonOne = 2131034140;
+			
+			// aapt resource value: 0x7f050022
+			public const int buttonWorking = 2131034146;
+			
+			// aapt resource value: 0x7f05002d
+			public const int editText1 = 2131034157;
 			
 			// aapt resource value: 0x7f050010
-			public const int seekBarPosAffect = 2131034128;
+			public const int imageViewHappyHowAreYou = 2131034128;
+			
+			// aapt resource value: 0x7f050017
+			public const int imageViewLeftNegAffect = 2131034135;
+			
+			// aapt resource value: 0x7f050012
+			public const int imageViewLeftPosAffect = 2131034130;
+			
+			// aapt resource value: 0x7f050019
+			public const int imageViewRightNegAffect = 2131034137;
+			
+			// aapt resource value: 0x7f050014
+			public const int imageViewRightPosAffect = 2131034132;
+			
+			// aapt resource value: 0x7f05000e
+			public const int imageViewSadHowAreYou = 2131034126;
+			
+			// aapt resource value: 0x7f05000a
+			public const int linearLayout1 = 2131034122;
+			
+			// aapt resource value: 0x7f05001a
+			public const int linearLayout2 = 2131034138;
+			
+			// aapt resource value: 0x7f05001f
+			public const int linearLayout3 = 2131034143;
+			
+			// aapt resource value: 0x7f050023
+			public const int linearLayout4 = 2131034147;
+			
+			// aapt resource value: 0x7f05000d
+			public const int linearLayout5 = 2131034125;
+			
+			// aapt resource value: 0x7f050016
+			public const int linearLayout6 = 2131034134;
+			
+			// aapt resource value: 0x7f050009
+			public const int listView1 = 2131034121;
+			
+			// aapt resource value: 0x7f050029
+			public const int plotViewModel = 2131034153;
 			
 			// aapt resource value: 0x7f050027
-			public const int space1 = 2131034151;
+			public const int plotViewModelLeft = 2131034151;
+			
+			// aapt resource value: 0x7f050028
+			public const int plotViewModelRight = 2131034152;
+			
+			// aapt resource value: 0x7f05002f
+			public const int radioButton1 = 2131034159;
+			
+			// aapt resource value: 0x7f050030
+			public const int radioButton2 = 2131034160;
+			
+			// aapt resource value: 0x7f05002e
+			public const int radioGroup1 = 2131034158;
+			
+			// aapt resource value: 0x7f05000c
+			public const int scrollView1 = 2131034124;
+			
+			// aapt resource value: 0x7f05000f
+			public const int seekBar1 = 2131034127;
+			
+			// aapt resource value: 0x7f050018
+			public const int seekBarNegAffect = 2131034136;
+			
+			// aapt resource value: 0x7f050013
+			public const int seekBarPosAffect = 2131034131;
+			
+			// aapt resource value: 0x7f050005
+			public const int space1 = 2131034117;
 			
 			// aapt resource value: 0x7f050000
 			public const int textView1 = 2131034112;
@@ -195,17 +210,17 @@ namespace AREUOK
 			// aapt resource value: 0x7f050001
 			public const int textView2 = 2131034113;
 			
-			// aapt resource value: 0x7f05001b
-			public const int textView3 = 2131034139;
+			// aapt resource value: 0x7f05001e
+			public const int textView3 = 2131034142;
 			
-			// aapt resource value: 0x7f050024
-			public const int textView4 = 2131034148;
+			// aapt resource value: 0x7f05002a
+			public const int textView4 = 2131034154;
 			
-			// aapt resource value: 0x7f050012
-			public const int textViewNegAffect = 2131034130;
+			// aapt resource value: 0x7f050015
+			public const int textViewNegAffect = 2131034133;
 			
-			// aapt resource value: 0x7f05000e
-			public const int textViewPosAffect = 2131034126;
+			// aapt resource value: 0x7f050011
+			public const int textViewPosAffect = 2131034129;
 			
 			static Id()
 			{
@@ -236,25 +251,31 @@ namespace AREUOK
 			public const int MoodAssessment = 2130903044;
 			
 			// aapt resource value: 0x7f030005
-			public const int QuestionnaireFifthScreen = 2130903045;
+			public const int PlotDoubleScreen = 2130903045;
 			
 			// aapt resource value: 0x7f030006
-			public const int QuestionnaireFirstScreen = 2130903046;
+			public const int PlotScreen = 2130903046;
 			
 			// aapt resource value: 0x7f030007
-			public const int QuestionnaireFourthScreen = 2130903047;
+			public const int QuestionnaireFifthScreen = 2130903047;
 			
 			// aapt resource value: 0x7f030008
-			public const int QuestionnaireSecondScreen = 2130903048;
+			public const int QuestionnaireFirstScreen = 2130903048;
 			
 			// aapt resource value: 0x7f030009
-			public const int QuestionnaireSummary = 2130903049;
+			public const int QuestionnaireFourthScreen = 2130903049;
 			
 			// aapt resource value: 0x7f03000a
-			public const int QuestionnaireThirdScreen = 2130903050;
+			public const int QuestionnaireSecondScreen = 2130903050;
 			
 			// aapt resource value: 0x7f03000b
-			public const int Settings = 2130903051;
+			public const int QuestionnaireSummary = 2130903051;
+			
+			// aapt resource value: 0x7f03000c
+			public const int QuestionnaireThirdScreen = 2130903052;
+			
+			// aapt resource value: 0x7f03000d
+			public const int Settings = 2130903053;
 			
 			static Layout()
 			{
@@ -269,6 +290,9 @@ namespace AREUOK
 		public partial class String
 		{
 			
+			// aapt resource value: 0x7f040041
+			public const int Alone = 2130968641;
+			
 			// aapt resource value: 0x7f040030
 			public const int Already5Times = 2130968624;
 			
@@ -281,11 +305,17 @@ namespace AREUOK
 			// aapt resource value: 0x7f040021
 			public const int DeleteAll = 2130968609;
 			
+			// aapt resource value: 0x7f04003b
+			public const int Diagrams = 2130968635;
+			
 			// aapt resource value: 0x7f040029
 			public const int Eating = 2130968617;
 			
 			// aapt resource value: 0x7f04001d
 			public const int English = 2130968605;
+			
+			// aapt resource value: 0x7f040040
+			public const int Frequency = 2130968640;
 			
 			// aapt resource value: 0x7f04001c
 			public const int German = 2130968604;
@@ -313,6 +343,15 @@ namespace AREUOK
 			
 			// aapt resource value: 0x7f040026
 			public const int Many = 2130968614;
+			
+			// aapt resource value: 0x7f04003e
+			public const int Mood = 2130968638;
+			
+			// aapt resource value: 0x7f04003d
+			public const int MoodPeople = 2130968637;
+			
+			// aapt resource value: 0x7f04003c
+			public const int MoodTime = 2130968636;
 			
 			// aapt resource value: 0x7f040019
 			public const int Name = 2130968601;
@@ -401,8 +440,14 @@ namespace AREUOK
 			// aapt resource value: 0x7f04001a
 			public const int Standard_Name = 2130968602;
 			
+			// aapt resource value: 0x7f04003f
+			public const int Time = 2130968639;
+			
 			// aapt resource value: 0x7f040027
 			public const int WhatAreYouDoing = 2130968615;
+			
+			// aapt resource value: 0x7f040042
+			public const int WithPeople = 2130968642;
 			
 			// aapt resource value: 0x7f04002a
 			public const int Work = 2130968618;

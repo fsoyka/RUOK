@@ -68,6 +68,8 @@
     <Compile Include="History_old.cs" />
     <Compile Include="History_List.cs" />
     <Compile Include="History.cs" />
+    <Compile Include="MoodTime.cs" />
+    <Compile Include="MoodPeople.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />
@@ -107,6 +109,8 @@
     <AndroidResource Include="Resources\drawable-mdpi\angry.png" />
     <AndroidResource Include="Resources\layout\History_List.axml" />
     <AndroidResource Include="Resources\layout\History.axml" />
+    <AndroidResource Include="Resources\layout\PlotScreen.axml" />
+    <AndroidResource Include="Resources\layout\PlotDoubleScreen.axml" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

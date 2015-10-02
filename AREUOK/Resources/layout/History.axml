@@ -3,11 +3,27 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent">
-    <oxyplot.xamarin.android.PlotView
-        android:layout_width="fill_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/plotViewModel"
-        android:layout_weight="1" />
+    <TextView
+        android:text="@string/Diagrams"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView1"
+        android:gravity="center" />
+    <Button
+        android:text="@string/MoodTime"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMoodTime" />
+    <Button
+        android:text="@string/MoodPeople"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonMoodPeople" />
+    <Space
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:id="@+id/space1" />
     <Button
         android:text="Export"
         android:layout_width="match_parent"
@@ -18,6 +34,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2" />
+    <Button
+        android:text="Example DB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/buttonExDB" />
     <Button
         android:text="@string/back_button"
         android:layout_width="match_parent"

@@ -59,4 +59,12 @@
 	<string name="NegAffect3">Wie einsam sind Sie?</string>
 	<string name="NegAffect4">Wie unruhig sind Sie?</string>
 	<string name="NegAffect5">Wie ärgerlich sind Sie?</string>
+	<string name="Diagrams">Diagramme</string>
+	<string name="MoodTime">Stimmung/Zeit</string>
+	<string name="MoodPeople">Stimmung/Menschen</string>
+	<string name="Mood">Stimmung</string>
+	<string name="Time">Zeit</string>
+	<string name="Frequency">Häufigkeit</string>
+	<string name="Alone">Allein</string>
+	<string name="WithPeople">In Gesellschaft</string>
 </resources>

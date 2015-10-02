@@ -59,4 +59,12 @@
 	<string name="NegAffect3">How lonely are you?</string>
 	<string name="NegAffect4">How agitated are you?</string>
 	<string name="NegAffect5">How angry are you?</string>
+	<string name="Diagrams">Diagrams</string>
+	<string name="MoodTime">Mood/Time</string>
+	<string name="MoodPeople">Mood/People</string>
+	<string name="Mood">Mood</string>
+	<string name="Time">Time</string>
+	<string name="Frequency">Frequency</string>
+	<string name="Alone">Alone</string>
+	<string name="WithPeople">With people</string>
 </resources>
