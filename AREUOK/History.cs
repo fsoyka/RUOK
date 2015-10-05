@@ -121,7 +121,7 @@ namespace AREUOK
 					backupDB = new File(sd, "MoodData.csv"); //this is where we're going to export to
 					OS = new FileOutputStream(backupDB);
 					//write a header in the beginning
-					string header = "date; time; mood; people; what; location; pos1; pos2; pos3; pos4; pos5; neg1; neg2; neg3; neg4; neg5; questionFlags\n";
+					string header = "date; time; mood; people; what; location; pos1; pos2; pos3; pos4; pos5; neg1; neg2; neg3; neg4; neg5\n";
 					byte[] bytes = new byte[header.Length * sizeof(char)];
 					System.Buffer.BlockCopy(header.ToCharArray(), 0, bytes, 0, bytes.Length);
 					OS.Write(bytes);
@@ -129,7 +129,7 @@ namespace AREUOK
 					for (int ii = 0; ii < cursor.Count; ii++) { //go through all rows
 						cursor.MoveToPosition (ii);
 						//now go through all columns
-						for (int kk = 1; kk < cursor.ColumnCount; kk++) { //skip the first column since it is just the ID
+						for (int kk = 1; kk < cursor.ColumnCount-1; kk++) { //skip the first column since it is just the ID and the last since it's the question flags
 							//[date] TEXT NOT NULL, [time] TEXT NOT NULL, [mood] INT NOT NULL, [people] INT NOT NULL, [what] INT NOT NULL, [location] INT NOT NULL, [pos1] INT, [pos2] INT , [pos3] INT, [pos4] INT, [pos5] INT, [neg1] INT, [neg2] INT , [neg3] INT, [neg4] INT, [neg5] INT, [QuestionFlags] INT NOT NULL)";
 							//the first two columns are strings, the rest is int
 							string tempStr;
@@ -140,7 +140,7 @@ namespace AREUOK
 								int tempInt = cursor.GetInt(kk);
 								tempStr = tempInt.ToString();
 							}
-							if (kk == cursor.ColumnCount-1) //if last column, advance to next line
+							if (kk == cursor.ColumnCount-2) //if last column, advance to next line
 								tempStr += "\n";
 							else
 								tempStr += "; ";
@@ -157,6 +157,7 @@ namespace AREUOK
 					email.SetType("text/plain");
 					email.PutExtra(Android.Content.Intent.ExtraEmail, new string[]{"fsoyka@gmail.com"});
 					email.PutExtra(Android.Content.Intent.ExtraSubject, "R-U-OK Export");
+					email.PutExtra(Android.Content.Intent.ExtraText, "Beschreibung der Datenbank Einträge :\n[mood] Stimmung 0-8\n[people] keiner-viele, 0-2 \n[what] Freizeit-Arbeit, 0-2 \n[location] Unterwegs/Daheim, 0-1 \n[pos1-5] und [neg1-5] sind die Affekt Fragen, bewertet zwischen 1-9. Die Frage sind folgende:\nPos1: Wie fröhlich fühlen Sie sich?\nPos2: Wie optimistisch sind Sie?\nPos3: Wie zufrieden sind Sie?\nPos4: Wie entspannt sind Sie?\nPos5: 5te Frage fehlt noch\nNeg1: Wie traurig sind Sie?\nNeg2: Wie ängstlich sind Sie?\nNeg3: Wie einsam sind Sie?\nNeg4: Wie unruhig sind Sie?\nNeg5: Wie ärgerlich sind Sie?\n" );
 					email.PutExtra(Android.Content.Intent.ExtraStream, Android.Net.Uri.Parse("file://" + backupDB.AbsolutePath));
 					//System.Console.WriteLine(backupDB.AbsolutePath);
 					StartActivity(Intent.CreateChooser(email, "Send mail..."));
