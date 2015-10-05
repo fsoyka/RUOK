@@ -243,8 +243,9 @@ namespace AREUOK
 						insertValues.Put("what", nWhat);
 						insertValues.Put("location", nWhere);
 						insertValues.Put("QuestionFlags", alreadyAsked);
-						insertValues.Put("pos" + (posQuestion+1).ToString(), nProgressPosAffect);
-						insertValues.Put("neg" + (negQuestion+1).ToString(), nProgressNegAffect);
+						//score affect questions between 1 and 9 instead of 0 and 8, because in the database question that have not been asked are stored as zeros.
+						insertValues.Put("pos" + (posQuestion+1).ToString(), nProgressPosAffect+1); 
+						insertValues.Put("neg" + (negQuestion+1).ToString(), nProgressNegAffect+1);
 
 
 						dbMood.WritableDatabase.Insert ("MoodData", null, insertValues);

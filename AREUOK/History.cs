@@ -97,12 +97,13 @@ namespace AREUOK
 			//EXPORT BUTTON TO WRITE SQLITE DB FILE TO SD CARD
 			Button ExportButton = FindViewById<Button> (Resource.Id.button3);
 			ExportButton.Click += delegate {
+
+				//This is for exporting the db file
 				File sd = GetExternalFilesDir(null);
 				File backupDB = new File(sd, "MoodData.db"); //this is where we're going to export to
 				//this is the database file
 				File data = GetDatabasePath("MoodData.db");
 				//Android.Widget.Toast.MakeText(this, data.AbsolutePath, Android.Widget.ToastLength.Short).Show();
-
 				OutputStream OS = new FileOutputStream(backupDB);
 				InputStream IS = new FileInputStream(data);
 				//the actual copying action
@@ -111,6 +112,55 @@ namespace AREUOK
 				OS.Write(dataByte);
 				IS.Close();
 				OS.Close();
+
+				//Now try to export everything as a csv file
+				Android.Database.ICursor cursor; 
+				cursor = db.ReadableDatabase.RawQuery("SELECT * FROM MoodData ORDER BY _id DESC", null); // cursor query
+				//only write a file if there are entries in the DB
+				if (cursor.Count > 0) {
+					backupDB = new File(sd, "MoodData.csv"); //this is where we're going to export to
+					OS = new FileOutputStream(backupDB);
+					//write a header in the beginning
+					string header = "date; time; mood; people; what; location; pos1; pos2; pos3; pos4; pos5; neg1; neg2; neg3; neg4; neg5; questionFlags\n";
+					byte[] bytes = new byte[header.Length * sizeof(char)];
+					System.Buffer.BlockCopy(header.ToCharArray(), 0, bytes, 0, bytes.Length);
+					OS.Write(bytes);
+
+					for (int ii = 0; ii < cursor.Count; ii++) { //go through all rows
+						cursor.MoveToPosition (ii);
+						//now go through all columns
+						for (int kk = 1; kk < cursor.ColumnCount; kk++) { //skip the first column since it is just the ID
+							//[date] TEXT NOT NULL, [time] TEXT NOT NULL, [mood] INT NOT NULL, [people] INT NOT NULL, [what] INT NOT NULL, [location] INT NOT NULL, [pos1] INT, [pos2] INT , [pos3] INT, [pos4] INT, [pos5] INT, [neg1] INT, [neg2] INT , [neg3] INT, [neg4] INT, [neg5] INT, [QuestionFlags] INT NOT NULL)";
+							//the first two columns are strings, the rest is int
+							string tempStr;
+							if (kk < 3) {
+								tempStr = cursor.GetString(kk);
+							}
+							else {
+								int tempInt = cursor.GetInt(kk);
+								tempStr = tempInt.ToString();
+							}
+							if (kk == cursor.ColumnCount-1) //if last column, advance to next line
+								tempStr += "\n";
+							else
+								tempStr += "; ";
+							//convert to byte and write
+							bytes = new byte[tempStr.Length * sizeof(char)];
+							System.Buffer.BlockCopy(tempStr.ToCharArray(), 0, bytes, 0, bytes.Length);
+							OS.Write(bytes);
+						}
+					}
+
+					OS.Close();
+					//send via email
+					var email = new Intent(Intent.ActionSend);
+					email.SetType("text/plain");
+					email.PutExtra(Android.Content.Intent.ExtraEmail, new string[]{"fsoyka@gmail.com"});
+					email.PutExtra(Android.Content.Intent.ExtraSubject, "R-U-OK Export");
+					email.PutExtra(Android.Content.Intent.ExtraStream, Android.Net.Uri.Parse("file://" + backupDB.AbsolutePath));
+					System.Console.WriteLine(backupDB.AbsolutePath);
+					StartActivity(Intent.CreateChooser(email, "Send mail..."));
+				}
 
 				//Feedback message
 				Toast toast = Toast.MakeText (this, GetString (Resource.String.Done), ToastLength.Short);
