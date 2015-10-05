@@ -132,7 +132,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
                 <ImageView
-                    android:src="@drawable/sad"
+                    android:src="@drawable/happy"
                     android:id="@+id/imageViewLeftNegAffect"
                     android:layout_width="50dp"
                     android:layout_height="50dp"
@@ -154,7 +154,7 @@
                     android:progress="4"
                     android:layout_weight="1" />
                 <ImageView
-                    android:src="@drawable/happy"
+                    android:src="@drawable/sad"
                     android:id="@+id/imageViewRightNegAffect"
                     android:layout_width="50dp"
                     android:layout_height="50dp"

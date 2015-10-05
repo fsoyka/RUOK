@@ -67,4 +67,7 @@
 	<string name="Frequency">Häufigkeit</string>
 	<string name="Alone">Allein</string>
 	<string name="WithPeople">In Gesellschaft</string>
+	<string name="ExportDB">Exportiere Datenbank</string>
+	<string name="ExampleDB">Erzeuge Beispiel DB</string>
+	<string name="Done">Erledigt</string>
 </resources>

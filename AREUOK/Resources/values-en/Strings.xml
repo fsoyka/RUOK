@@ -67,4 +67,7 @@
 	<string name="Frequency">Frequency</string>
 	<string name="Alone">Alone</string>
 	<string name="WithPeople">With people</string>
+	<string name="ExportDB">Export database</string>
+	<string name="ExampleDB">Create example DB</string>
+	<string name="Done">Done</string>
 </resources>

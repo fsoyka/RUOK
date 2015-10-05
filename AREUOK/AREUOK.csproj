@@ -111,6 +111,7 @@
     <AndroidResource Include="Resources\layout\History.axml" />
     <AndroidResource Include="Resources\layout\PlotScreen.axml" />
     <AndroidResource Include="Resources\layout\PlotDoubleScreen.axml" />
+    <AndroidResource Include="Resources\drawable-mdpi\Agitated.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

@@ -68,6 +68,10 @@ namespace AREUOK
 				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('01.10.15', '13:30', 1, 0, 1, 1, 1023)");
 				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('01.10.15', '16:30', 8, 2, 1, 1, 1023)");
 				db.WritableDatabase.ExecSQL("INSERT INTO MoodData (date, time, mood, people, what, location, QuestionFlags) VALUES ('01.10.15', '18:30', 3, 0, 1, 1, 1023)");
+				//Feedback message
+				Toast toast = Toast.MakeText (this, GetString (Resource.String.Done), ToastLength.Short);
+				toast.SetGravity (GravityFlags.Center, 0, 0);
+				toast.Show ();
 			};
 				
 
@@ -107,6 +111,11 @@ namespace AREUOK
 				OS.Write(dataByte);
 				IS.Close();
 				OS.Close();
+
+				//Feedback message
+				Toast toast = Toast.MakeText (this, GetString (Resource.String.Done), ToastLength.Short);
+				toast.SetGravity (GravityFlags.Center, 0, 0);
+				toast.Show ();
 
 				//http://developer.android.com/reference/android/content/Context.html#getExternalFilesDir%28java.lang.String%29
 				//http://www.techrepublic.com/blog/software-engineer/export-sqlite-data-from-your-android-device/

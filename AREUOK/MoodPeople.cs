@@ -19,7 +19,7 @@ using OxyPlot.Xamarin.Android;
 
 namespace AREUOK
 {
-	[Activity (Label = "R-U-OK", Icon = "@drawable/icon", ConfigurationChanges =  Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]			
+	[Activity (Label = "R-U-OK", Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)] //, ConfigurationChanges =  Android.Content.PM.ConfigChanges.Orientation | Android.Content.PM.ConfigChanges.ScreenSize)]			
 	public class MoodPeople : Activity
 	{
 		MoodDatabase db;
@@ -33,6 +33,19 @@ namespace AREUOK
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
+
+			//somehow an orientation change changes the language. Therefore we check and reset the language here depending on the stored preferences
+			//check language preferences, if they are set apply them otherwise stay with the current language
+			ISharedPreferences sharedPref = GetSharedPreferences("com.FSoft.are_u_ok.PREFERENCES",FileCreationMode.Private);
+			String savedLanguage = sharedPref.GetString ("Language", "");
+			//if there is a saved language (length > 0) and the current language is different from the saved one, then change
+			Android.Content.Res.Configuration conf = Resources.Configuration;
+			if ((savedLanguage.Length > 0) & (conf.Locale.Language != savedLanguage)){
+				//set language and restart activity to see the effect
+				conf.Locale = new Java.Util.Locale(savedLanguage);
+				Android.Util.DisplayMetrics dm = this.Resources.DisplayMetrics;
+				this.Resources.UpdateConfiguration (conf, dm);
+			}
 
 			// Create your application here
 			SetContentView(Resource.Layout.PlotDoubleScreen);
@@ -71,7 +84,7 @@ namespace AREUOK
 				//determine font size, either keep default or for small screens set it to a smaller size
 				double dFontSize = temp.DefaultFontSize;
 				if (Resources.DisplayMetrics.HeightPixels <= 320)
-					dFontSize = 8;
+					dFontSize = 5;
 
 				//define axes
 
@@ -154,14 +167,14 @@ namespace AREUOK
 				PlotModel tempRight = new PlotModel ();
 				double dFontSize = tempRight.DefaultFontSize;
 				if (Resources.DisplayMetrics.HeightPixels <= 320)
-					dFontSize = 8;
+					dFontSize = 5;
 				
 
 				//define axes
 
 				//we need 9 categories for the histogram since we score the mood between 0 and 8
 				var categoryAxisRight = new OxyPlot.Axes.CategoryAxis ();
-				categoryAxisRight.LabelField = "Label";
+				//categoryAxisRight.LabelField = "Label";
 				categoryAxisRight.Position = OxyPlot.Axes.AxisPosition.Bottom;
 				categoryAxisRight.ActualLabels.Add ("0");
 				categoryAxisRight.ActualLabels.Add ("1");
@@ -222,8 +235,8 @@ namespace AREUOK
 		{
 			base.OnConfigurationChanged (newConfig);
 			//plotViewModelLeft.ActualModel.Title = Resources.GetString(Resource.String.Alone);
-			System.Console.WriteLine(Resources.GetString(Resource.String.Alone));
-			//somehow the orientation change changes the language. Try to fix this by saving the language and re-setting it manually everytime the orientation changes
+			//System.Console.WriteLine(Resources.GetString(Resource.String.Alone));
+			//somehow the orientation change changes the language. 
 		}
 			
 	}

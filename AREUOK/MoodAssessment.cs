@@ -120,18 +120,20 @@ namespace AREUOK
 				case 1:
 					negAffectText.Text = GetString(Resource.String.NegAffect2);
 					//change sad smiley to afraid
-					_LeftNegAffect.SetImageResource(Resource.Drawable.afraid);
+					_RightNegAffect.SetImageResource(Resource.Drawable.afraid);
 					break;
 				case 2:
 					negAffectText.Text = GetString(Resource.String.NegAffect3);
 					break;
 				case 3:
 					negAffectText.Text = GetString(Resource.String.NegAffect4);
+					//change sad smiley to agitated
+					_RightNegAffect.SetImageResource(Resource.Drawable.Agitated);
 					break;
 				case 4:
 					negAffectText.Text = GetString(Resource.String.NegAffect5);	
 					//change sad smiley to angry
-					_LeftNegAffect.SetImageResource(Resource.Drawable.angry);
+					_RightNegAffect.SetImageResource(Resource.Drawable.angry);
 					break;
 				}
 

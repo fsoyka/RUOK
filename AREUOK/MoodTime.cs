@@ -19,7 +19,7 @@ using OxyPlot.Xamarin.Android;
 
 namespace AREUOK
 {
-	[Activity (Label = "R-U-OK", Icon = "@drawable/icon")]			
+	[Activity (Label = "R-U-OK", Icon = "@drawable/icon", ScreenOrientation = Android.Content.PM.ScreenOrientation.Landscape)]			
 	public class MoodTime : Activity
 	{
 		MoodDatabase db;
@@ -31,6 +31,19 @@ namespace AREUOK
 		protected override void OnCreate (Bundle bundle)
 		{
 			base.OnCreate (bundle);
+
+			//somehow an orientation change changes the language. Therefore we check and reset the language here depending on the stored preferences
+			//check language preferences, if they are set apply them otherwise stay with the current language
+			ISharedPreferences sharedPref = GetSharedPreferences("com.FSoft.are_u_ok.PREFERENCES",FileCreationMode.Private);
+			String savedLanguage = sharedPref.GetString ("Language", "");
+			//if there is a saved language (length > 0) and the current language is different from the saved one, then change
+			Android.Content.Res.Configuration conf = Resources.Configuration;
+			if ((savedLanguage.Length > 0) & (conf.Locale.Language != savedLanguage)){
+				//set language and restart activity to see the effect
+				conf.Locale = new Java.Util.Locale(savedLanguage);
+				Android.Util.DisplayMetrics dm = this.Resources.DisplayMetrics;
+				this.Resources.UpdateConfiguration (conf, dm);
+			}
 
 			// Create your application here
 			SetContentView(Resource.Layout.PlotScreen);
@@ -81,8 +94,12 @@ namespace AREUOK
 				PlotModel temp = new PlotModel ();
 				//determine font size, either keep default or for small screens set it to a smaller size
 				double dFontSize = temp.DefaultFontSize;
-				if (Resources.DisplayMetrics.HeightPixels <= 320)
-					dFontSize = 8;
+				double dMarkerSize = 8;
+				if (Resources.DisplayMetrics.HeightPixels <= 320) {
+					dFontSize = 5;
+					dMarkerSize = 5;
+
+				}
 				//define axes
 				var dateAxis = new OxyPlot.Axes.DateTimeAxis ();
 				dateAxis.Position = OxyPlot.Axes.AxisPosition.Bottom;
@@ -103,8 +120,9 @@ namespace AREUOK
 				valueAxis.StringFormat = "0";
 				temp.Axes.Add (valueAxis);
 				lineSerie.MarkerType = MarkerType.Square;
-				lineSerie.MarkerSize = 8;
+				lineSerie.MarkerSize = dMarkerSize;
 				lineSerie.LabelFormatString = "{1}";  //http://discussion.oxyplot.org/topic/490066-trackerformatstring-question/
+				lineSerie.FontSize = dFontSize;
 				temp.Series.Add (lineSerie);
 				MyModel = temp;
 

@@ -48,19 +48,22 @@ namespace AREUOK
 			public const int afraid = 2130837504;
 			
 			// aapt resource value: 0x7f020001
-			public const int angry = 2130837505;
+			public const int Agitated = 2130837505;
 			
 			// aapt resource value: 0x7f020002
-			public const int happy = 2130837506;
+			public const int angry = 2130837506;
 			
 			// aapt resource value: 0x7f020003
-			public const int Icon = 2130837507;
+			public const int happy = 2130837507;
 			
 			// aapt resource value: 0x7f020004
-			public const int RUOKHome = 2130837508;
+			public const int Icon = 2130837508;
 			
 			// aapt resource value: 0x7f020005
-			public const int sad = 2130837509;
+			public const int RUOKHome = 2130837509;
+			
+			// aapt resource value: 0x7f020006
+			public const int sad = 2130837510;
 			
 			static Drawable()
 			{
@@ -308,11 +311,20 @@ namespace AREUOK
 			// aapt resource value: 0x7f04003b
 			public const int Diagrams = 2130968635;
 			
+			// aapt resource value: 0x7f040045
+			public const int Done = 2130968645;
+			
 			// aapt resource value: 0x7f040029
 			public const int Eating = 2130968617;
 			
 			// aapt resource value: 0x7f04001d
 			public const int English = 2130968605;
+			
+			// aapt resource value: 0x7f040044
+			public const int ExampleDB = 2130968644;
+			
+			// aapt resource value: 0x7f040043
+			public const int ExportDB = 2130968643;
 			
 			// aapt resource value: 0x7f040040
 			public const int Frequency = 2130968640;
