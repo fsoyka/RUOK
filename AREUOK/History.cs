@@ -158,7 +158,7 @@ namespace AREUOK
 					email.PutExtra(Android.Content.Intent.ExtraEmail, new string[]{"fsoyka@gmail.com"});
 					email.PutExtra(Android.Content.Intent.ExtraSubject, "R-U-OK Export");
 					email.PutExtra(Android.Content.Intent.ExtraStream, Android.Net.Uri.Parse("file://" + backupDB.AbsolutePath));
-					System.Console.WriteLine(backupDB.AbsolutePath);
+					//System.Console.WriteLine(backupDB.AbsolutePath);
 					StartActivity(Intent.CreateChooser(email, "Send mail..."));
 				}
 
