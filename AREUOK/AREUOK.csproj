@@ -112,6 +112,10 @@
     <AndroidResource Include="Resources\layout\PlotScreen.axml" />
     <AndroidResource Include="Resources\layout\PlotDoubleScreen.axml" />
     <AndroidResource Include="Resources\drawable-mdpi\Agitated.png" />
+    <AndroidResource Include="Resources\drawable-mdpi\beach_gauss.jpg" />
+    <AndroidResource Include="Resources\drawable-mdpi\RUOKHome_gauss.jpg" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\beach_gauss.jpg" />
+    <AndroidResource Include="Resources\drawable-xxxhdpi\RUOKHome_gauss.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />
   <ItemGroup>

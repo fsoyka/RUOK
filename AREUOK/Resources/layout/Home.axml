@@ -4,7 +4,7 @@
     p1:layout_width="match_parent"
     p1:layout_height="match_parent"
     p1:id="@+id/linearLayout1"
-    p1:background="@drawable/ruokhome">
+    p1:background="@drawable/ruokhome_gauss">
     <TextView
         p1:text="@string/Greeting"
         p1:textAppearance="?android:attr/textAppearanceLarge"
