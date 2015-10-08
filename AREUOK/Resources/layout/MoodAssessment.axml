@@ -3,7 +3,8 @@
     android:orientation="vertical"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="@drawable/beach_gauss">
+    android:background="@drawable/flower_pink_low"
+    android:id="@+id/LinearLayoutMood">
     <ScrollView
         android:minWidth="25px"
         android:minHeight="25px"

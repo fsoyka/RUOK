@@ -61,8 +61,49 @@ namespace AREUOK
 				// Create your application here
 				SetContentView (Resource.Layout.MoodAssessment);
 
-				//CHOOSE QUESTIONS TO ASK
+				//select random background picture
+				//find view with background
+				LinearLayout LayoutMood = FindViewById<LinearLayout>(Resource.Id.LinearLayoutMood);
 				rnd = new Random(); //generator is seeded each time it is initialized
+				switch (rnd.Next (11)) {
+				case 0:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.clouds_low));
+					break;
+				case 1:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.beach_gauss));
+					break;
+				case 2:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.dawn_low));
+					break;
+				case 3:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.flower_pink_low));
+					break;
+				case 4:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.flower_red_low));
+					break;
+				case 5:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.forest_low));
+					break;
+				case 6:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.mountains_low));
+					break;
+				case 7:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.mountain_green_low));
+					break;
+				case 8:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.rice_low));
+					break;
+				case 9:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.rice_sun_low));
+					break;
+				case 10:
+					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.sea_low));
+					break;
+				}
+
+
+				//CHOOSE QUESTIONS TO ASK
+				//rnd = new Random(); //generator is seeded each time it is initialized
 
 				//take latest db entry from today and read out which questions have already been asked.
 				//if there is no enry yet, set already asked to 0
