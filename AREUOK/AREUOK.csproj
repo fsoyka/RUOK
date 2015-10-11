@@ -121,10 +121,6 @@
     <AndroidResource Include="Resources\drawable-mdpi\flower_pink_low.jpg" />
     <AndroidResource Include="Resources\drawable-mdpi\flower_red_low.jpg" />
     <AndroidResource Include="Resources\drawable-mdpi\forest_low.jpg" />
-    <AndroidResource Include="Resources\drawable-mdpi\mountain_green_low.jpg" />
-    <AndroidResource Include="Resources\drawable-mdpi\mountains_low.jpg" />
-    <AndroidResource Include="Resources\drawable-mdpi\rice_low.jpg" />
-    <AndroidResource Include="Resources\drawable-mdpi\rice_sun_low.jpg" />
     <AndroidResource Include="Resources\drawable-mdpi\sea_low.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Novell\Novell.MonoDroid.CSharp.targets" />

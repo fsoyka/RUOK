@@ -78,28 +78,16 @@ namespace AREUOK
 			public const int Icon = 2130837514;
 			
 			// aapt resource value: 0x7f02000b
-			public const int mountain_green_low = 2130837515;
+			public const int RUOKHome = 2130837515;
 			
 			// aapt resource value: 0x7f02000c
-			public const int mountains_low = 2130837516;
+			public const int RUOKHome_gauss = 2130837516;
 			
 			// aapt resource value: 0x7f02000d
-			public const int rice_low = 2130837517;
+			public const int sad = 2130837517;
 			
 			// aapt resource value: 0x7f02000e
-			public const int rice_sun_low = 2130837518;
-			
-			// aapt resource value: 0x7f02000f
-			public const int RUOKHome = 2130837519;
-			
-			// aapt resource value: 0x7f020010
-			public const int RUOKHome_gauss = 2130837520;
-			
-			// aapt resource value: 0x7f020011
-			public const int sad = 2130837521;
-			
-			// aapt resource value: 0x7f020012
-			public const int sea_low = 2130837522;
+			public const int sea_low = 2130837518;
 			
 			static Drawable()
 			{

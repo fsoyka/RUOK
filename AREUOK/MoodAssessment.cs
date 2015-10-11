@@ -65,7 +65,7 @@ namespace AREUOK
 				//find view with background
 				LinearLayout LayoutMood = FindViewById<LinearLayout>(Resource.Id.LinearLayoutMood);
 				rnd = new Random(); //generator is seeded each time it is initialized
-				switch (rnd.Next (11)) {
+				switch (rnd.Next (7)) {
 				case 0:
 					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.clouds_low));
 					break;
@@ -85,18 +85,6 @@ namespace AREUOK
 					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.forest_low));
 					break;
 				case 6:
-					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.mountains_low));
-					break;
-				case 7:
-					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.mountain_green_low));
-					break;
-				case 8:
-					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.rice_low));
-					break;
-				case 9:
-					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.rice_sun_low));
-					break;
-				case 10:
 					LayoutMood.SetBackgroundDrawable (Resources.GetDrawable (Resource.Drawable.sea_low));
 					break;
 				}
