@@ -74,4 +74,5 @@
 	<string name="WaitReminder">Wait till the next reminder</string>
 	<string name="StartReminder">Start reminders</string>
 	<string name="StopReminder">Stop reminders</string>
+	<string name="ExampleQuest">Questionnaire example</string>
 </resources>

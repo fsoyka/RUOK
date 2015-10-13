@@ -350,6 +350,9 @@ namespace AREUOK
 			// aapt resource value: 0x7f040044
 			public const int ExampleDB = 2130968644;
 			
+			// aapt resource value: 0x7f04004a
+			public const int ExampleQuest = 2130968650;
+			
 			// aapt resource value: 0x7f040043
 			public const int ExportDB = 2130968643;
 			

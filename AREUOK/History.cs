@@ -88,6 +88,12 @@ namespace AREUOK
 				//create an intent to go to the next screen
 				db.WritableDatabase.ExecSQL("DROP TABLE IF EXISTS MoodData");
 				db.WritableDatabase.ExecSQL(MoodDatabase.create_table_sql);
+
+				//Feedback message
+				Toast toast = Toast.MakeText (this, GetString (Resource.String.Done), ToastLength.Short);
+				toast.SetGravity (GravityFlags.Center, 0, 0);
+				toast.Show ();
+
 				//restart this activity in order to update the view
 				Intent intent = new Intent(this, typeof(History));
 				intent.SetFlags(ActivityFlags.ClearTop); //remove the history 

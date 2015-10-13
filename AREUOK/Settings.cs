@@ -114,6 +114,10 @@ namespace AREUOK
 				//Call setAlarm in the Receiver class
 				AlarmReceiverQuestionnaire temp = new AlarmReceiverQuestionnaire();
 				temp.SetAlarm(this);
+				//Feedback message
+				Toast toast = Toast.MakeText (this, GetString (Resource.String.Done), ToastLength.Short);
+				toast.SetGravity (GravityFlags.Center, 0, 0);
+				toast.Show ();
 			};	
 
 			//cancel all alarms
@@ -132,6 +136,17 @@ namespace AREUOK
 				ISharedPreferencesEditor editor = sharedPref.Edit();
 				editor.PutBoolean("QuestionnaireActive", false );
 				editor.Commit ();
+				//Feedback message
+				Toast toast = Toast.MakeText (this, GetString (Resource.String.Done), ToastLength.Short);
+				toast.SetGravity (GravityFlags.Center, 0, 0);
+				toast.Show ();
+			};	
+
+			//show an example questionnaire to demonstrate the app
+			Button ExampleButton = FindViewById<Button> (Resource.Id.button4);
+			ExampleButton.Click += delegate {
+				Intent intent = new Intent(this, typeof(MoodAssessmentExample));
+				StartActivity(intent);
 			};	
 				
 

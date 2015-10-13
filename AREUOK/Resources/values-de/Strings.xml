@@ -74,4 +74,5 @@
 	<string name="WaitReminder">Warten Sie bis zur nächsten Erinnerung</string>
 	<string name="StartReminder">Starte Erinnerungen</string>
 	<string name="StopReminder">Stoppe Erinnerungen</string>
+	<string name="ExampleQuest">Beispiel Fragebogen</string>
 </resources>
