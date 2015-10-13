@@ -39,13 +39,21 @@ namespace AREUOK
 
 			// Set our view from the "main" layout resource
 			SetContentView (Resource.Layout.Home);
-		
+
 			Button Questionnaire = FindViewById<Button> (Resource.Id.button1);
+			//Questionnaire.Enabled = questActive;
 			Questionnaire.Click += delegate {
 				//create an intent to go to the next screen
-				//Intent intent = new Intent(this, typeof(QuestionnaireFirstScreen));
-				Intent intent = new Intent(this, typeof(MoodAssessment));
-				StartActivity(intent);
+				bool questActive = sharedPref.GetBoolean("QuestionnaireActive", false);
+				if(questActive) {
+					Intent intent = new Intent(this, typeof(MoodAssessment));
+					StartActivity(intent);
+				}
+				else {
+					Toast toast = Toast.MakeText (this, GetString (Resource.String.WaitReminder), ToastLength.Long);
+					toast.SetGravity (GravityFlags.Center, 0, 0);
+					toast.Show ();
+				}
 			};
 
 			Button SettingsButton = FindViewById<Button> (Resource.Id.button2);

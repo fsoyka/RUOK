@@ -108,12 +108,30 @@ namespace AREUOK
 				StartActivity(intent);
 			};
 
-			//send a reminder 5 seconds after the button was pressed
+			//start sending reminders after the button was pressed
 			Button ReminderButton = FindViewById<Button> (Resource.Id.button2);
 			ReminderButton.Click += delegate {
 				//Call setAlarm in the Receiver class
-				AlarmReceiver temp = new AlarmReceiver();
+				AlarmReceiverQuestionnaire temp = new AlarmReceiverQuestionnaire();
 				temp.SetAlarm(this);
+			};	
+
+			//cancel all alarms
+			Button CancelAlarmsButton = FindViewById<Button> (Resource.Id.button3);
+			CancelAlarmsButton.Click += delegate {
+				AlarmManager alarmMgr = (AlarmManager)GetSystemService(Context.AlarmService);
+				//First cancel the Invalid Alarm
+				Intent intentTemp = new Intent(this, typeof(AlarmReceiverInvalid));
+				PendingIntent alarmIntent = PendingIntent.GetBroadcast(this, 0, intentTemp, 0);
+				alarmMgr.Cancel(alarmIntent);
+				//now the other alarm
+				intentTemp = new Intent(this, typeof(AlarmReceiverQuestionnaire));
+				alarmIntent = PendingIntent.GetBroadcast(this, 0, intentTemp, 0);
+				alarmMgr.Cancel(alarmIntent);
+				//also reset the state of the questionnaire avaliabilty
+				ISharedPreferencesEditor editor = sharedPref.Edit();
+				editor.PutBoolean("QuestionnaireActive", false );
+				editor.Commit ();
 			};	
 				
 

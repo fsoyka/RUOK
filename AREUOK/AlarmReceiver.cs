@@ -35,12 +35,15 @@ namespace AREUOK
 			Vibrator vibrator = (Vibrator) context.GetSystemService(Context.VibratorService);            
 			if (vibrator != null)
 				vibrator.Vibrate(400);
-			
+
 			w1.Release ();
 
 			//check these pages for really waking up the device
 			// http://stackoverflow.com/questions/6864712/android-alarmmanager-not-waking-phone-up
 			// https://forums.xamarin.com/discussion/7490/alarm-manager
+
+			//it's good to use the alarm manager for tasks that should last even days:
+			// http://stackoverflow.com/questions/14376470/scheduling-recurring-task-in-android/
 		}
 
 		public void SetAlarm(Context context){

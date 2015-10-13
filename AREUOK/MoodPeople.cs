@@ -65,7 +65,7 @@ namespace AREUOK
 			plotViewModelLeft = FindViewById<PlotView>(Resource.Id.plotViewModelLeft);
 
 			//select all mood values for which people was 0 (alone)
-			cursor = db.ReadableDatabase.RawQuery("SELECT mood FROM MoodData WHERE people = 0", null); // cursor query
+			cursor = db.ReadableDatabase.RawQuery("SELECT mood FROM MoodData WHERE people = 0 AND NOT mood = -1", null); // cursor query
 
 
 			if (cursor.Count > 0) {
@@ -149,7 +149,7 @@ namespace AREUOK
 			plotViewModelRight = FindViewById<PlotView>(Resource.Id.plotViewModelRight);
 
 			//select all mood values for which people was 0 (alone)
-			cursor = db.ReadableDatabase.RawQuery("SELECT mood FROM MoodData WHERE NOT people = 0", null); // cursor query
+			cursor = db.ReadableDatabase.RawQuery("SELECT mood FROM MoodData WHERE NOT people = 0 AND NOT mood = -1", null); // cursor query
 
 			//only continue if there is data, otherwise there will be an error
 			if (cursor.Count > 0) {

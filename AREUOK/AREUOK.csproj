@@ -70,6 +70,8 @@
     <Compile Include="History.cs" />
     <Compile Include="MoodTime.cs" />
     <Compile Include="MoodPeople.cs" />
+    <Compile Include="AlarmReceiverQuestionnaire.cs" />
+    <Compile Include="AlarmReceiverInvalid.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

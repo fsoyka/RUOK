@@ -292,6 +292,23 @@ namespace AREUOK
 						//					Toast.MakeText(this, cursor.Count.ToString(), ToastLength.Short).Show();
 						//Tutorial on SELECT: http://zetcode.com/db/sqlite/select/
 
+						//After the questions have been answered we disable the questionnaire button again and start a new alarm
+						ISharedPreferences sharedPref = GetSharedPreferences("com.FSoft.are_u_ok.PREFERENCES",FileCreationMode.Private);
+						ISharedPreferencesEditor editor = sharedPref.Edit();
+						editor.PutBoolean("QuestionnaireActive", false );
+						editor.Commit ();
+
+						//cancel the invalidation alarm
+						// http://stackoverflow.com/questions/14485368/delete-alarm-from-alarmmanager-using-cancel-android
+						AlarmManager alarmMgr = (AlarmManager)GetSystemService(Context.AlarmService);
+						Intent intentTemp = new Intent(this, typeof(AlarmReceiverInvalid));
+						PendingIntent alarmIntent = PendingIntent.GetBroadcast(this, 0, intentTemp, 0);
+						alarmMgr.Cancel(alarmIntent);
+
+						//set the new alarm
+						AlarmReceiverQuestionnaire temp = new AlarmReceiverQuestionnaire();
+						temp.SetAlarm(this);
+
 						//create an intent to go to the next screen
 						Intent intent = new Intent(this, typeof(Home));
 						intent.SetFlags(ActivityFlags.ClearTop); //remove the history and go back to home screen

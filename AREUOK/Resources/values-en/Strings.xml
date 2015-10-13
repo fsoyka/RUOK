@@ -70,4 +70,8 @@
 	<string name="ExportDB">Export database</string>
 	<string name="ExampleDB">Create example DB</string>
 	<string name="Done">Done</string>
+	<string name="InvalidationText">Questions not answered in time</string>
+	<string name="WaitReminder">Wait till the next reminder</string>
+	<string name="StartReminder">Start reminders</string>
+	<string name="StopReminder">Stop reminders</string>
 </resources>

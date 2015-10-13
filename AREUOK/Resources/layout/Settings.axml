@@ -18,7 +18,7 @@
         android:maxLength="20" />
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:id="@+id/space1" />
     <TextView
         android:text="@string/Language"
@@ -44,13 +44,18 @@
     </RadioGroup>
     <Space
         android:layout_width="match_parent"
-        android:layout_height="30dp"
+        android:layout_height="20dp"
         android:id="@+id/space1" />
     <Button
-        android:text="Test Reminder"
+        android:text="@string/StartReminder"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/button2" />
+    <Button
+        android:text="@string/StopReminder"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/button3" />
     <Button
         android:text="@string/back_button"
         android:layout_width="match_parent"

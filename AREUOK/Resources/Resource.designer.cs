@@ -374,6 +374,9 @@ namespace AREUOK
 			// aapt resource value: 0x7f040003
 			public const int Impressum = 2130968579;
 			
+			// aapt resource value: 0x7f040046
+			public const int InvalidationText = 2130968646;
+			
 			// aapt resource value: 0x7f04001b
 			public const int Language = 2130968603;
 			
@@ -479,8 +482,17 @@ namespace AREUOK
 			// aapt resource value: 0x7f04001a
 			public const int Standard_Name = 2130968602;
 			
+			// aapt resource value: 0x7f040048
+			public const int StartReminder = 2130968648;
+			
+			// aapt resource value: 0x7f040049
+			public const int StopReminder = 2130968649;
+			
 			// aapt resource value: 0x7f04003f
 			public const int Time = 2130968639;
+			
+			// aapt resource value: 0x7f040047
+			public const int WaitReminder = 2130968647;
 			
 			// aapt resource value: 0x7f040027
 			public const int WhatAreYouDoing = 2130968615;

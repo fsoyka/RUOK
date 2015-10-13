@@ -65,7 +65,7 @@ namespace AREUOK
 			plotViewModel = FindViewById<PlotView>(Resource.Id.plotViewModel);
 
 			//query database
-			cursor = db.ReadableDatabase.RawQuery("SELECT date, time, mood FROM MoodData", null); // cursor query
+			cursor = db.ReadableDatabase.RawQuery("SELECT date, time, mood FROM MoodData WHERE NOT mood = -1", null); // cursor query
 
 			//read out date and time and convert back to DateTime item for plotting
 //			cursor.MoveToFirst();

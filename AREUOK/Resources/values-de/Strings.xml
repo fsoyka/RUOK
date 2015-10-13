@@ -70,4 +70,8 @@
 	<string name="ExportDB">Exportiere Datenbank</string>
 	<string name="ExampleDB">Erzeuge Beispiel DB</string>
 	<string name="Done">Erledigt</string>
+	<string name="InvalidationText">Fragen nicht rechtzeitig beantwortet</string>
+	<string name="WaitReminder">Warten Sie bis zur nächsten Erinnerung</string>
+	<string name="StartReminder">Starte Erinnerungen</string>
+	<string name="StopReminder">Stoppe Erinnerungen</string>
 </resources>
