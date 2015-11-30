@@ -48,6 +48,9 @@
     <Reference Include="OxyPlot.Xamarin.Android">
       <HintPath>..\packages\OxyPlot.Xamarin.Android.2015.1.999-alpha\lib\MonoAndroid\OxyPlot.Xamarin.Android.dll</HintPath>
     </Reference>
+    <Reference Include="ICSharpCode.SharpZipLib.Portable">
+      <HintPath>..\packages\SharpZipLib.Portable.0.86.0.0003\lib\portable-net45+netcore45+wp8+win8+wpa81+MonoTouch+MonoAndroid+Xamarin.iOS10\ICSharpCode.SharpZipLib.Portable.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Resources\Resource.designer.cs" />
@@ -73,6 +76,7 @@
     <Compile Include="AlarmReceiverQuestionnaire.cs" />
     <Compile Include="AlarmReceiverInvalid.cs" />
     <Compile Include="MoodAssessmentExample.cs" />
+    <Compile Include="ZIPHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\AboutResources.txt" />

@@ -158,13 +158,20 @@ namespace AREUOK
 					}
 
 					OS.Close();
+
+					//Encrypt File
+					var zipTemp = new ZIPHelper();
+					zipTemp.Save(sd.AbsolutePath);
+					System.Console.WriteLine("Path: " + sd.AbsolutePath );
+
 					//send via email
 					var email = new Intent(Intent.ActionSend);
 					email.SetType("text/plain");
 					//email.PutExtra(Android.Content.Intent.ExtraEmail, new string[]{"fsoyka@gmail.com"});
 					email.PutExtra(Android.Content.Intent.ExtraSubject, "R-U-OK Export");
 					email.PutExtra(Android.Content.Intent.ExtraText, "Beschreibung der Datenbank Einträge :\n[mood] Stimmung 0-8, -1 wenn die Erinnerung verpasst wurde\n[people] keiner-viele, 0-2 \n[what] Freizeit-Arbeit, 0-2 \n[location] Unterwegs/Daheim, 0-1 \n[pos1-5] und [neg1-5] sind die Affekt Fragen, bewertet zwischen 1-9. Einträge mit 0 sind nicht gefragt worden. Die Frage sind folgende:\nPos1: Wie fröhlich fühlen Sie sich?\nPos2: Wie optimistisch sind Sie?\nPos3: Wie zufrieden sind Sie?\nPos4: Wie entspannt sind Sie?\nPos5: 5te Frage fehlt noch\nNeg1: Wie traurig sind Sie?\nNeg2: Wie ängstlich sind Sie?\nNeg3: Wie einsam sind Sie?\nNeg4: Wie unruhig sind Sie?\nNeg5: Wie ärgerlich sind Sie?\n" );
-					email.PutExtra(Android.Content.Intent.ExtraStream, Android.Net.Uri.Parse("file://" + backupDB.AbsolutePath));
+					//email.PutExtra(Android.Content.Intent.ExtraStream, Android.Net.Uri.Parse("file://" + backupDB.AbsolutePath));
+					email.PutExtra(Android.Content.Intent.ExtraStream, Android.Net.Uri.Parse("file://" + sd.AbsolutePath + "//MoodData.zip"));
 					//System.Console.WriteLine(backupDB.AbsolutePath);
 					StartActivity(Intent.CreateChooser(email, "Send email..."));
 				}
@@ -187,6 +194,7 @@ namespace AREUOK
 			db.Close ();
 			base.OnDestroy();
 		}
+			
 			
 	}
 }
